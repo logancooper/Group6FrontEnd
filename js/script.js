@@ -48,8 +48,11 @@ function FetchPastLaunchesCallback(data)
 
 function BuildPastLaunchElement(launchInfo)
 {
+    //Grab the root element on the page & create a new div for our information
     const root = document.querySelector("#root");
     const newLaunch = document.createElement("div");
+
+    //process the info from launchInfo provided
     const missionName = launchInfo.name;
     const flightNumber = launchInfo.flight_number;
     const launchSuccess = launchInfo.success;
@@ -69,6 +72,7 @@ function BuildPastLaunchElement(launchInfo)
     const redditMediaLink = redditLinks.media;
     const redditRecoveryLink = redditLinks.recovery;
 
+    //create paragraph elements for each piece of information to display
     const missionNameElement = document.createElement("p");
     const flightNumberElement = document.createElement("p");
     const launchSuccessElement = document.createElement("p");
@@ -84,6 +88,7 @@ function BuildPastLaunchElement(launchInfo)
     const webCastLinkElement = document.createElement("p");
     const wikipediaLinkElement = document.createElement("p");
 
+    //Set the innertext of each paragraph element to display the data
     missionNameElement.innerText = "Mission Name: " + missionName;
     flightNumberElement.innerText = "Flight Number: " + flightNumber;
     launchSuccessElement.innerText = "Launch Successful: " + launchSuccess;
@@ -99,6 +104,7 @@ function BuildPastLaunchElement(launchInfo)
     webCastLinkElement.innerText = "WebCast Link: " + webCastLink;
     wikipediaLinkElement.innerText = "Mission Wikipedia: " + wikipediaLink;
 
+    //append each element to the new launch div
     newLaunch.append(missionNameElement);
     newLaunch.append(flightNumberElement);
     newLaunch.append(launchSuccessElement);
@@ -114,5 +120,6 @@ function BuildPastLaunchElement(launchInfo)
     newLaunch.append(webCastLinkElement);
     newLaunch.append(wikipediaLinkElement);
     newLaunch.append(document.createElement("hr"))
+    //append the new launch div to the root
     root.append(newLaunch);
 }
