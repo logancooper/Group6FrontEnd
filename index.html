@@ -1,79 +1,219 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
+<!DOCTYPE HTML>
+<htmllang="en">
+	<head>
+		<title>Space X Fan Site</title>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" href="css/styles.css" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>SpaceX Card layout</title>
-    <link rel="stylesheet" href="css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+	</head>
+	<body class="home">
+		<div class="home-wrapper">
+			<!-- Header -->
+				<div class="header">
 
-</head>
+					<!-- Inner -->
+						<div class="inner">
+							<header>
+								<h1><a href="index.html" id="logo">Space X Fan site</a></h1>
+								<hr />
+								<p>Dragon Docking Simulator </p>
+							</header>
+							<footer>
+								<a href="https://iss-sim.spacex.com/" class="button circled scrolly">Play</a>
+							</footer>
+						</div>
 
-<body>
-    <div id="header-wrapper">
-        <div id="header" class="container">
-            <!--<header class="sc-bwzfXH gFvcIX"><a href="/"><img src="/static/media/spacex-logo.9250222f.svg" 
-                        alt="SpaceX logo"></a>
-                <nav class="sc-bdVaJa imXhqw">
-                    <ul>
-                        <li><a href="/launches" class="active" aria-current="page">Launches</a></li>
-                        <li><a href="/rockets">Rockets</a></li>
-                        <li><a href="/capsules">Capsules</a></li>
-                    </ul>
-                </nav>
-            </header>
-            <!-- <nav class="navbar navbar-expand-lg navbar-light bg-white">
-                <div class="container-fluid">
-                  <a class="navbar-brand" href="#">SpaceX Fan Site</a>
-                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                  </button>
-                  <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                    <ul class="navbar-nav">
-                      <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="#">Launches</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="#">Rockets</a>
-                      </li>
-                      <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                          Related Articles
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                          <li><a class="dropdown-item" href="#">Action</a></li>
-                          <li><a class="dropdown-item" href="#">Another action</a></li>
-                          <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </nav> -->
-            <article>
-                <header class="article-header">
-                    <h1>Elon Shoots For The Stars</h1>
-                </header>
-                <div id="card-container">
-                </div>
-            </article>
+					<!-- Nav -->
+						<nav class="nav">
+							<ul>
+								<li><a href="index.html">Home</a></li>
+								<li><a href="#" >Explore</a>
+									<ul>
+										<li><a href="aboutus.html">About Space X</a></li>
+										<li><a href="register.html">Become a fan</a></li>
+								
+										<li>
+											<li> <a href ="index.html"> Go experience a launch ...</a></li>
+											
+											<ul>
+												<li><a href="https://www.travala.com/">Book your trip</a></li>
+												<li><a href="https://floridahealthcovid19.gov/travelers/">Florida COVID-19 travel guidelines</a></li>
+												
+											</ul>
+										</li>
+										
+									</ul>
+								</li>
+								
+								<li><a href="right-sidebar.html">Launch Schedule</a></li>
+								<li><a href="no-sidebar.html">About Us</a></li>
+							</ul>
+						</nav>
+
+				</div>
+
+			<!-- Banner -->
+				<section class="search">
+					<header>
+						<h2> <strong>Search Space Launch Information</strong></h2>
+					</header>
+      <!-- Cards -->
+        <div id="card-container">
         </div>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
-            crossorigin="anonymous"></script>
-        <script src="js/script.js"></script>
+<form id="triviaQuestions">
 
-    <div id="root">
-        
-    </div>
+	<fieldset>
+		<label id="Searchmission"> Search by mission name
+			<select id="dropdown1">
+				<option value="none" selected disabled hidden>Choose mission name</option>
+				<!--options append into here-->
+			</select>
+			<button type="button" id="button1">Search</button>
+		</label>
 
-</body>
 
+		<label id="newmission"> Search for upcoming launch
+			<select id="dropdown1">
+				<option value="none" selected disabled hidden>Choose flight number</option>
+				<!--options append into here-->
+			</select>
+			<button type="button" id="button1">Search</button>
+		</label>
+
+		<div id= mission-info> 
+
+		<p id="guessCount"> Search Results here </p>
+
+		</div>
+
+	</fieldset>
+
+</form>
+</section>
+  
+			<!-- Main -->
+				<div class="wrapper style2">
+
+					<article id="main" class="container special">
+						<a href="#" class="image featured"><img src="images/pic06 .jpg" alt="" /></a>
+						<header>
+							<h2><a href="#"> Mission Details </a></h2>
+						</header>
+						<p>
+							Space Exploration Technologies Corp. is an American aerospace manufacturer, space transportation services and
+							communications company headquartered in Hawthorne, California. SpaceX was founded in 2002 by Elon Musk with the goal of
+							reducing space transportation costs to enable the colonization of Mars.
+						</p>
+						<footer>
+							<a href="#" class="button">Continue Reading</a>
+						</footer>
+					</article>
+
+				</div>
+
+			<!-- Features -->
+				<div class="wrapper style1">
+
+					<section id="features" class="container special">
+						<header>
+							<h2>Morbi ullamcorper et varius leo lacus</h2>
+							<p>Ipsum volutpat consectetur orci metus consequat imperdiet duis integer semper magna.</p>
+						</header>
+						<div class="row">
+							<article class="col-4 col-12-mobile special">
+								<a href="#" class="image featured"><img src="images/pic07.jpg" alt="" /></a>
+								<header>
+									<h3><a href="#">Gravida aliquam penatibus</a></h3>
+								</header>
+								<p>
+									Amet nullam fringilla nibh nulla convallis tique ante proin sociis accumsan lobortis. Auctor etiam
+									porttitor phasellus tempus cubilia ultrices tempor sagittis. Nisl fermentum consequat integer interdum.
+								</p>
+							</article>
+							<article class="col-4 col-12-mobile special">
+								<a href="#" class="image featured"><img src="images/pic08.jpg" alt="" /></a>
+								<header>
+									<h3><a href="#">Sed quis rhoncus placerat</a></h3>
+								</header>
+								<p>
+									Amet nullam fringilla nibh nulla convallis tique ante proin sociis accumsan lobortis. Auctor etiam
+									porttitor phasellus tempus cubilia ultrices tempor sagittis. Nisl fermentum consequat integer interdum.
+								</p>
+							</article>
+							<article class="col-4 col-12-mobile special">
+								<a href="#" class="image featured"><img src="images/pic09.jpg" alt="" /></a>
+								<header>
+									<h3><a href="#">Magna laoreet et aliquam</a></h3>
+								</header>
+								<p>
+									Amet nullam fringilla nibh nulla convallis tique ante proin sociis accumsan lobortis. Auctor etiam
+									porttitor phasellus tempus cubilia ultrices tempor sagittis. Nisl fermentum consequat integer interdum.
+								</p>
+							</article>
+						</div>
+					</section>
+
+				</div>
+
+			<!-- Footer -->
+				<div id="footer">
+					<div class="container">
+						<div class="row">
+
+							<!-- social Media links -->
+								<section class="col-4 col-12-mobile">
+									<header>
+										<h2 class="icon solid fa-file circled"><span class="label">Posts</span></h2>
+									</header>
+								</section>	
+
+									<section class="col-4 col-12-mobile">
+										<header>
+											<h2 class="icon solid fa-file circled"><span class="label">Posts</span></h2>
+										</header>
+									</section>
+
+
+										<section class="col-4 col-12-mobile">
+											<header>
+												<h2 class="icon solid fa-file circled"><span class="label">Posts</span></h2>
+											</header>
+									</section>
+						</div>
+					
+						<div class="row">
+							<div class="col-12">
+
+								<!-- Contact -->
+									<section class="contact">
+										<header>
+											<h3>Nisl turpis nascetur interdum?</h3>
+										</header>
+										<p>Urna nisl non quis interdum mus ornare ridiculus egestas ridiculus lobortis vivamus tempor aliquet.</p>
+										<ul class="icons">
+											<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+											<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+											<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+											<li><a href="#" class="icon brands fa-linkedin-in"><span class="label">Linkedin</span></a></li>
+										</ul>
+									</section>
+
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="js/scripts.js"></script>
+			<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+      crossorigin="anonymous"></script>
+
+	</body>
 </html>
