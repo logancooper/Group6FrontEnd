@@ -1,0 +1,70 @@
+
+
+body {
+    background: #000
+      url(https://miukimiu.github.io/star-wars-random-quotes/images/bg.jpg);
+    color: white
+  }
+  
+  .container {
+    color: black;
+  }
+
+
+
+#card-container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    flex-wrap:wrap;
+}
+
+.card {
+    box-shadow: 0 8px 16px 0 rgb(5, 5, 5);
+    transition: 0.3s;
+  }
+  
+  .card {
+    box-sizing: content-box
+  }
+  
+  .success-card:hover {
+    box-shadow: 0 8px 16px 0 rgb(0, 255, 13);
+  }
+  .failure-card:hover {
+    box-shadow: 0 8px 16px 0 rgb(255, 0, 0);
+  }
+  
+  #card-container {
+    padding: 2px 16px;
+  }
+  
+  .card {
+    display: inline;
+    height: 25%;
+    width: 25%;
+  }
+  
+  .card {
+    float: inline-start;
+  }
+
+  #card-container {
+    display: block;
+    width: 100%;
+  }
+  
+  .card {
+    border: 1px solid black;
+    float: left;
+    margin: 10px;
+    padding: 10px 3px;
+  }
+
+  .article-header {
+      color: white;
+      text-align: center;
+  }
+
+
+
