@@ -1,5 +1,24 @@
-'use strict'
+"use strict";
+document.addEventListener("DOMContentLoaded", function (){
+    //Fetch the past launches
+    FetchPastLaunches();
+})
 
+//template for fetch command
+function FetchTemplate()
+{
+    fetch()
+        .then(function (response){
+            return response.json();
+        }) 
+        .then(function (data){
+            return data;
+        })
+        .catch(function (error){
+            console.error("ERROR: ", error);
+            return error;
+        })
+}
 
 const cards = document.querySelectorAll('.card');
 
