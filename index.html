@@ -4,7 +4,7 @@
 		<title>Space X Fan Site</title>
 		<meta charset="utf-8" />
 		<link rel="stylesheet" href="css/styles.css" />
-        
+    <link rel="stylesheet" href="css/style.css" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -55,14 +55,50 @@
 					</ul>
 				</nav>
 
+			<!-- Banner -->
+				<section class="search">
+					<header>
+						<h2> <strong>Search Space Launch Information</strong></h2>
+					</header>
+<form id="triviaQuestions">
 
-				</div>
-						
-				<!-- Main -->
+	<fieldset>
+		<label id="Searchmission"> Search by mission name
+			<select id="dropdown1">
+				<option value="none" selected disabled hidden>Choose mission name</option>
+				<!--options append into here-->
+			</select>
+			<button type="button" id="button1">Search</button>
+		</label>
+
+
+		<label id="newmission"> Search for upcoming launch
+			<select id="dropdown1">
+				<option value="none" selected disabled hidden>Choose flight number</option>
+				<!--options append into here-->
+			</select>
+			<button type="button" id="button1">Search</button>
+		</label>
+
+		<div id= mission-info> 
+
+		<p id="guessCount"> Search Results here </p>
+
+		</div>
+
+	</fieldset>
+
+</form>
+</section>
+        <!-- Cards -->
+        <div id="card-container">
+        </div>
+			<!-- Main -->
 				<div class="wrapper style2">
 
 					<article id="main" class="container special">
-		
+						<!-- <a href="#" class="image featured"><img src="images/pic06 .jpg" alt="" /></a> -->
+
 						<header>
 							<h2><a href="#"></a> Mission Details </a></h2>
 						</header>
@@ -82,7 +118,6 @@
 							<header>
 								<h2> <strong>Search Space Launch Information</strong></h2>
 							</header>
-
 								<form>
 									<form>
 									
@@ -117,14 +152,11 @@
 			
 			</div>
 
-			<!-- Scripts -->
+		<!-- Scripts -->
 			<script src="js/script.js"></script>
-				
-			<script 
-				src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
-				integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
-				crossorigin="anonymous">	
-			</script>
+			<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+      crossorigin="anonymous"></script>
 
 	</body>
 </html>
