@@ -57,6 +57,36 @@ function FetchTemplate()
         })
 }
 
+const cards = document.querySelectorAll('.card');
+
+cards.forEach(function(card) {
+  card.addEventListener('click', function() {
+    card.classList.toggle('focused');
+  })
+})
+
+
+document.addEventListener("DOMContentLoaded", function (){
+    //Fetch the past launches
+    FetchPastLaunches();
+})
+
+//template for fetch command
+function FetchTemplate()
+{
+    fetch()
+        .then(function (response){
+            return response.json();
+        }) 
+        .then(function (data){
+            return data;
+        })
+        .catch(function (error){
+            console.error("ERROR: ", error);
+            return error;
+        })
+}
+
 //Function to fetch past launch data from the API
 function FetchPastLaunches()
 {
@@ -257,6 +287,7 @@ function BuildLaunchElement(launchInfo)
     //newLaunch.append(document.createElement("hr"))
     //append the new launch div to the root
     container.append(newLaunch);
+
 }
 
 function ClearCardDiv()
