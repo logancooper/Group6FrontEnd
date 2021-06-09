@@ -89,14 +89,15 @@
 			</header>
 			<form>
 				<fieldset>
-					<label> Search by mission date
-						<input type="text" name="username" placeholder="Enter mission name" />
-						<button type="submit">Submit</button>
+					<label> Search by mission
+						<input type="text" id="search-mission-name-input" placeholder="Enter mission name" />
+						<button type="button" id="search-mission-name-button">Search</button>
 					</label>
 
-					<label> Search by mission
-						<input type="date" id="search-date" name="mission-date">
-						<button type="submit">Submit</button>
+					<label> Search by mission date
+						<input type="date" id="search-mission-date-start-input" name="mission-date">
+						<input type="date" id="search-mission-date-end-input" name="mission-date">
+						<button type="button" id="search-mission-date-button">Search</button>
 					</label>
 				</fieldset>
 
