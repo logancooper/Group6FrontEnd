@@ -1,9 +1,43 @@
 "use strict";
 
+const searchMissionNameButton = document.querySelector("#search-mission-name-button");
+searchMissionNameButton.addEventListener("click", function(){
+    const searchMissonNameInput = document.querySelector("#search-mission-name-input");
+    ClearCardDiv();
+    FetchLaunchByName(searchMissonNameInput.value);
+})
 
+const searchMissionDateButton = document.querySelector("#search-mission-date-button");
+searchMissionDateButton.addEventListener("click", function(){
+    const searchMissonDateStartInput = document.querySelector("#search-mission-date-start-input");
+    const searchMissonDateEndInput = document.querySelector("#search-mission-date-end-input");
+    ClearCardDiv();
+    if(searchMissonDateStartInput.value != "")
+    {
+        console.log(searchMissonDateStartInput.value);
+    }
+    else
+    {
+        console.log("Please enter a start date!");
+    }
+    if(searchMissonDateStartInput.value != "")
+    {
+        console.log(searchMissonDateEndInput.value);
+    }
+    else
+    {
+        console.log("Please enter an end date!");
+    }
+    if(searchMissonDateStartInput.value && searchMissonDateEndInput.value != "")
+    {
+        FetchLaunchByDate(searchMissonDateStartInput.value,searchMissonDateEndInput.value);
+    }
+    
+})
 
 document.addEventListener("DOMContentLoaded", function (){
     //Fetch the past launches
+    ClearCardDiv();
     FetchPastLaunches();
 })
 
@@ -43,13 +77,78 @@ function FetchPastLaunches()
 function FetchPastLaunchesCallback(data)
 {
     console.log(data);
-    for (var i = 0; i < data.length; i++)
+    //build launch elements for the last 10 launches retrived
+    for (var i = data.length - 1; i > data.length - 11; i--)
     {
-        BuildPastLaunchElement(data[i]);
+        BuildLaunchElement(data[i]);
     }
 }
 
-function BuildPastLaunchElement(launchInfo)
+function FetchLaunchByName(searchInput)
+{
+    fetch('https://api.spacexdata.com/v4/launches')
+        .then(function (response){
+            return response.json();
+        }) 
+        .then(function (data){
+            FetchLaunchByNameCallback(data, searchInput);
+            return data;
+        })
+        .catch(function (error){
+            console.error("ERROR: ", error);
+            return error;
+        })
+}
+
+function FetchLaunchByNameCallback(data, searchInput)
+{
+    for (var i = 0; i < data.length; i++)
+    {
+        if(data[i].name.includes(searchInput))
+        {
+            BuildLaunchElement(data[i]);
+        }
+    }
+}
+
+function FetchLaunchByDate(startDate, endDate)
+{
+    fetch('https://api.spacexdata.com/v4/launches')
+    .then(function (response){
+        return response.json();
+    }) 
+    .then(function (data){
+        FetchLaunchByDateCallback(data, startDate, endDate);
+        return data;
+    })
+    .catch(function (error){
+        console.error("ERROR: ", error);
+        return error;
+    })
+}
+
+function FetchLaunchByDateCallback(data, startDateInput, endDateInput)
+{
+    //parse dates
+    const startDate = Date.parse(startDateInput);
+    const endDate = Date.parse(endDateInput);
+
+    //for all of the launches returned
+    for (var i = 0; i < data.length; i++)
+    {
+        const launchDate = new Date(data[i].date_utc);
+        //if the launchDate is between the start/end dates, create a card for it
+        if(launchDate >= startDate && launchDate <= endDate)
+        {
+            BuildLaunchElement(data[i]);
+        }
+    }
+}
+
+
+
+
+function BuildLaunchElement(launchInfo)
 {
     //process the info from launchInfo provided
     const missionName = launchInfo.name;
@@ -158,4 +257,13 @@ function BuildPastLaunchElement(launchInfo)
     //newLaunch.append(document.createElement("hr"))
     //append the new launch div to the root
     container.append(newLaunch);
+}
+
+function ClearCardDiv()
+{
+    const div = document.getElementById("card-container");
+    while(div.firstChild)
+    {
+        div.removeChild(div.firstChild);
+    }
 }
