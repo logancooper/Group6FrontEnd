@@ -177,10 +177,8 @@ ol, ul {
 }
 
 h1,
-h2,
 h3,
 h4,
-h5,
 h6 {
 	font-weight: 400;
 	color: white;
@@ -275,15 +273,12 @@ button,
 
  #card-container {
  	padding: 2px 16px;
-	margin: auto;
-	wrapper
-	
+	margin: auto;	
  }
 
  #card-container {
  	display:block;
  	justify-content:center;
-
 
  }
 
