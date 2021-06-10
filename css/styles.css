@@ -250,6 +250,7 @@ button,
 	box-shadow: 0 8px 16px 0 rgb(0, 255, 13);
 }
 
+
 .failure-card:hover {
 	box-shadow: 0 8px 16px 0 rgb(255, 0, 0);
 }
@@ -258,6 +259,7 @@ button,
 	padding: 2px 16px;
 	margin: auto;
 }
+
 
 #card-container {
 	display: block;
@@ -276,8 +278,6 @@ button,
 	display: flex;
 
 }
-
-
 
 .card {
 	border: 1px solid black;
