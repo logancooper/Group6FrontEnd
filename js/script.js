@@ -306,8 +306,6 @@ function ClearCardDiv()
     }
 }
 
-
-
 const turnCards = document.querySelectorAll(".flip-card-inner");
 
 function flipCard() {
