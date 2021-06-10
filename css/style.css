@@ -289,6 +289,7 @@ button,
     height: 100%;
     width: 100%;
     flex-wrap: wrap;
+    
 }
 
 .flip-card {
@@ -315,9 +316,9 @@ button,
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   }
   
-  .flip-card:hover .flip-card-inner {
+  /* .flip-card:hover .flip-card-inner {
     transform: rotateY(180deg);
-  }
+  } */
   
   .flip-card-front, .flip-card-back {
     position: absolute;
@@ -329,14 +330,16 @@ button,
   
   .flip-card-front {
     border-radius: 25px;
-    background-color: white;
-    color: black;
+    background-image: url(https://cdn.hipwallpaper.com/i/15/97/DuNyZ2.jpg);
+    background-position: center;
+    color: white;
     overflow: hidden;
   }
   
   .flip-card-back {
     border-radius: 25px;
-    background-color: white;
-    color: black;
+    background-image: url(https://cdn.hipwallpaper.com/i/15/97/DuNyZ2.jpg);
+    background-position: center;
+    color: white;
     transform: rotateY(180deg);
   } 
