@@ -5,6 +5,7 @@ searchMissionNameButton.addEventListener("click", function(){
     const searchMissonNameInput = document.querySelector("#search-mission-name-input");
     ClearCardDiv();
     FetchLaunchByName(searchMissonNameInput.value);
+    AddCardEventListeners()
 })
 
 const searchMissionDateButton = document.querySelector("#search-mission-date-button");
@@ -31,6 +32,7 @@ searchMissionDateButton.addEventListener("click", function(){
     if(searchMissonDateStartInput.value && searchMissonDateEndInput.value != "")
     {
         FetchLaunchByDate(searchMissonDateStartInput.value,searchMissonDateEndInput.value);
+        AddCardEventListeners()
     }
     
 })
@@ -39,6 +41,7 @@ document.addEventListener("DOMContentLoaded", function (){
     //Fetch the past launches
     ClearCardDiv();
     FetchPastLaunches();
+    AddCardEventListeners()
 })
 
 //template for fetch command
@@ -57,19 +60,16 @@ function FetchTemplate()
         })
 }
 
-const cards = document.querySelectorAll('.card');
+function AddCardEventListeners()
+{
+    const cards = document.querySelectorAll('.card');
 
-cards.forEach(function(card) {
-  card.addEventListener('click', function() {
-    card.classList.toggle('focused');
-  })
-})
-
-
-document.addEventListener("DOMContentLoaded", function (){
-    //Fetch the past launches
-    FetchPastLaunches();
-})
+    cards.forEach(function(card) {
+      card.addEventListener('click', function() {
+        card.classList.toggle('focused');
+      })
+    })
+}
 
 //template for fetch command
 function FetchTemplate()
@@ -174,9 +174,6 @@ function FetchLaunchByDateCallback(data, startDateInput, endDateInput)
         }
     }
 }
-
-
-
 
 function BuildLaunchElement(launchInfo)
 {
