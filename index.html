@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body class="home">
@@ -57,6 +58,24 @@
             </nav>
         </div>
 
+
+        <div class="box2">
+
+            <p>
+
+                Space Exploration Technologies Corp. is an American aerospace manufacturer, space transportation
+                services
+                and
+                communications company headquartered in Hawthorne, California. SpaceX was founded in 2002 by Elon
+                Musk with
+                the goal of
+                reducing space transportation costs to enable the colonization of Mars. This website celebrates the
+                achievements and contributions of Space X to human kind.
+            </p>
+
+
+        </div>
+
         <!-- flex box for search and Roadster -->
         <section class="flex-box1">
             <div class="search-box">
@@ -95,7 +114,7 @@
         </section>
 
 
-
+        <!-- flex box for search and Roadster -->
         <section class="flex-box1">
             <div class="search-box">
                 <article>
@@ -104,6 +123,8 @@
                         <fieldset>
                             <label> Search by mission
                                 <input type="text" id="search-mission-name-input" placeholder="Enter mission name" />
+
+                                <button type="button" id="search-mission-name-button">Search</button>
                             </label>
                         </fieldset>
 
@@ -111,8 +132,6 @@
                             <label> Search by mission date
                                 <input type="date" id="search-mission-date-start-input" name="mission-date">
                                 <input type="date" id="search-mission-date-end-input" name="mission-date">
-                                <br />
-                                <br />
                                 <button type="button" id="search-mission-date-button">Search</button>
                             </label>
                         </fieldset>
@@ -121,33 +140,45 @@
                 </article>
             </div>
 
-            <div class="roadster-display">
+            <div class="video-container">
                 <article>
 
-                    <p> Roadster </p>
-
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/7CZTLogln34"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
 
                 </article>
             </div>
 
         </section>
 
+        <!-- footer, will move it below card container-->
 
-        <div class="box2">
+        <section class="footer ">
+            <div class="social-links">
+                <article>
 
-            <p>
-                Space Exploration Technologies Corp. is an American aerospace manufacturer, space transportation
-                services
-                and
-                communications company headquartered in Hawthorne, California. SpaceX was founded in 2002 by Elon
-                Musk with
-                the goal of
-                reducing space transportation costs to enable the colonization of Mars. This website celebrates the
-                achievements and contributions of Space X to human kind.
-            </p>
+                    <a href="https://www.facebook.com/groups/spacexgroup/" class="fa fa-facebook"></a>
+                    <a href="https://twitter.com/SpaceX?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"
+                        class="fa fa-twitter"></a>
+                    <a href="https://www.linkedin.com/company/spacex/" class="fa fa-linkedin"></a>
+                    <a href="https://www.youtube.com/user/spacexchannel" class="fa fa-youtube"></a>
+                    <a href="https://www.instagram.com/spacex/" class="fa fa-instagram"></a>
 
+                    <div class=" copyright-container">
+                        <ul id="copyright">
+                            <li>&copy; SpaceX Fan Site. All rights reserved.</li>
+                            <li>Design: Three Cool Guys</li>
+                        </ul>
 
-        </div>
+                    </div>
+
+                </article>
+            </div>
+
+        </section>
+
         <div id=mission-info>
 
             <p id="Search-results" align="center"> Search results here </p>
@@ -159,19 +190,35 @@
 
     </div>
 
-<body>
-    <div class="wrapper container">
-        <div class="flip-card">
-            <div class="flip-card-inner">
-                <div class="flip-card-front">
-                    <div><img src="https://images2.imgbox.com/9a/96/nLppz9HW_o.png">
-                        <header class="section-header">
-                            <h2>Starlink-15 (v1.0)</h2><span class="flight-num"><strong>Flight Number:</strong>
-                                109</span><br><span class="launch-date"><strong>Launch Date:</strong> October 24,
-                                2020</span><br><span class="launch-site"><strong>Launch Site:</strong> Cape Canaveral
-                                Air Force Station Space Launch
-                                Complex 40</span><br><span class="launch-success successful">Launch Successful</span>
-                        </header>
+    <body>
+        <div class="wrapper container">
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <div><img src="https://images2.imgbox.com/9a/96/nLppz9HW_o.png">
+                            <header class="section-header">
+                                <h2>Starlink-15 (v1.0)</h2><span class="flight-num"><strong>Flight Number:</strong>
+                                    109</span><br><span class="launch-date"><strong>Launch Date:</strong> October 24,
+                                    2020</span><br><span class="launch-site"><strong>Launch Site:</strong> Cape
+                                    Canaveral
+                                    Air Force Station Space Launch
+                                    Complex 40</span><br><span class="launch-success successful">Launch
+                                    Successful</span>
+                            </header>
+                            <div class="details">
+                                <h3>Mission Details</h3>
+                                <ul>
+                                    <li class="rocket-name">Rocket Name: Falcon 9</li>
+                                    <li class="rocket-type">Rocket Type: FT</li>
+                                    <li class="payload-type">Payload: Satellite</li>
+                                    <li class="payload-nationality">Payload Nationality: United States</li>
+                                    <li class="payload-mass">Payload Mass: 15400 kg</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="flip-card-back">
                         <div class="details">
                             <h3>Mission Details</h3>
                             <ul>
@@ -182,257 +229,256 @@
                                 <li class="payload-mass">Payload Mass: 15400 kg</li>
                             </ul>
                         </div>
-                    </div>
 
+                    </div>
                 </div>
-                <div class="flip-card-back">
-                    <div class="details">
-                        <h3>Mission Details</h3>
+            </div>
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+
+                    </div>
+                    <div class="flip-card-back">
+                        <h1></h1>
+                        <p></p>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+
+                    </div>
+                    <div class="flip-card-back">
+                        <h1></h1>
+                        <p></p>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+
+                    </div>
+                    <div class="flip-card-back">
+                        <h1></h1>
+                        <p></p>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        < <div id="header-wrapper">
+            <div id="header" class="container">
+                <header class="sc-bwzfXH gFvcIX"><a href="/"><img src="/static/media/spacex-logo.9250222f.svg"
+                            alt="SpaceX logo"></a>
+                    <nav class="sc-bdVaJa imXhqw">
                         <ul>
-                            <li class="rocket-name">Rocket Name: Falcon 9</li>
-                            <li class="rocket-type">Rocket Type: FT</li>
-                            <li class="payload-type">Payload: Satellite</li>
-                            <li class="payload-nationality">Payload Nationality: United States</li>
-                            <li class="payload-mass">Payload Mass: 15400 kg</li>
+                            <li><a href="/launches" class="active" aria-current="page">Launches</a></li>
+                            <li><a href="/rockets">Rockets</a></li>
+                            <li><a href="/capsules">Capsules</a></li>
                         </ul>
+                    </nav>
+                </header> -->
+                <<nav class="navbar navbar-expand-lg navbar-light bg-white">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="#">SpaceX Fan Site</a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Launches</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Rockets</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
+                                        role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Related Articles
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                        <li><a class="dropdown-item" href="#">Action</a></li>
+                                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-
-                </div>
+                    </nav>
+                    <<article>
+                        <header class="article-header">
+                            <h1>Elon Shoots For The Stars</h1>
+                        </header>
+                        <div id="card-container">
+                            <class class="card" style="width: 18rem;">
+                                <img src="ELON.SPACEX.web_.jpg.jpeg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up
+                                        the bulk
+                                        of the card's content.</p>
+                                </div>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">An item</li>
+                                    <li class="list-group-item">A second item</li>
+                                    <li class="list-group-item">A third item</li>
+                                </ul>
+                                <div class="card-body">
+                                    <a href="#" class="card-link">Card link</a>
+                                    <a href="#" class="card-link">Another link</a>
+                                </div>
+                            </class>
+                            <class class="card" style="width: 18rem;">
+                                <img src="ELON.SPACEX.web_.jpg.jpeg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up
+                                        the bulk
+                                        of the card's content.</p>
+                                </div>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">An item</li>
+                                    <li class="list-group-item">A second item</li>
+                                    <li class="list-group-item">A third item</li>
+                                </ul>
+                                <div class="card-body">
+                                    <a href="#" class="card-link">Card link</a>
+                                    <a href="#" class="card-link">Another link</a>
+                                </div>
+                            </class>
+                            <class class="card" style="width: 18rem;">
+                                <img src="ELON.SPACEX.web_.jpg.jpeg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up
+                                        the bulk
+                                        of the card's content.</p>
+                                </div>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">An item</li>
+                                    <li class="list-group-item">A second item</li>
+                                    <li class="list-group-item">A third item</li>
+                                </ul>
+                                <div class="card-body">
+                                    <a href="#" class="card-link">Card link</a>
+                                    <a href="#" class="card-link">Another link</a>
+                                </div>
+                            </class>
+                            <class class="card" style="width: 18rem;">
+                                <img src="ELON.SPACEX.web_.jpg.jpeg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up
+                                        the bulk
+                                        of the card's content.</p>
+                                </div>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">An item</li>
+                                    <li class="list-group-item">A second item</li>
+                                    <li class="list-group-item">A third item</li>
+                                </ul>
+                                <div class="card-body">
+                                    <a href="#" class="card-link">Card link</a>
+                                    <a href="#" class="card-link">Another link</a>
+                                </div>
+                            </class>
+                            <class class="card" style="width: 18rem;">
+                                <img src="ELON.SPACEX.web_.jpg.jpeg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up
+                                        the bulk
+                                        of the card's content.</p>
+                                </div>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">An item</li>
+                                    <li class="list-group-item">A second item</li>
+                                    <li class="list-group-item">A third item</li>
+                                </ul>
+                                <div class="card-body">
+                                    <a href="#" class="card-link">Card link</a>
+                                    <a href="#" class="card-link">Another link</a>
+                                </div>
+                            </class>
+                            <class class="card" style="width: 18rem;">
+                                <img src="ELON.SPACEX.web_.jpg.jpeg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up
+                                        the bulk
+                                        of the card's content.</p>
+                                </div>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">An item</li>
+                                    <li class="list-group-item">A second item</li>
+                                    <li class="list-group-item">A third item</li>
+                                </ul>
+                                <div class="card-body">
+                                    <a href="#" class="card-link">Card link</a>
+                                    <a href="#" class="card-link">Another link</a>
+                                </div>
+                            </class>
+                            <class class="card" style="width: 18rem;">
+                                <img src="ELON.SPACEX.web_.jpg.jpeg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up
+                                        the bulk
+                                        of the card's content.</p>
+                                </div>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">An item</li>
+                                    <li class="list-group-item">A second item</li>
+                                    <li class="list-group-item">A third item</li>
+                                </ul>
+                                <div class="card-body">
+                                    <a href="#" class="card-link">Card link</a>
+                                    <a href="#" class="card-link">Another link</a>
+                                </div>
+                            </class>
+                            <class class="card" style="width: 18rem;">
+                                <img src="ELON.SPACEX.web_.jpg.jpeg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up
+                                        the bulk
+                                        of the card's content.</p>
+                                </div>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">An item</li>
+                                    <li class="list-group-item">A second item</li>
+                                    <li class="list-group-item">A third item</li>
+                                </ul>
+                                <div class="card-body">
+                                    <a href="#" class="card-link">Card link</a>
+                                    <a href="#" class="card-link">Another link</a>
+                                </div>
+                            </class>
+                        </div>
+                        </article>
             </div>
-        </div>
-        <div class="flip-card">
-            <div class="flip-card-inner">
-                <div class="flip-card-front">
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+                crossorigin="anonymous"></script>
+            <script src="js/script.js"></script>
 
-                </div>
-                <div class="flip-card-back">
-                    <h1></h1>
-                    <p></p>
-                    <p></p>
-                </div>
+            <div id="root">
+
             </div>
-        </div>
-        <div class="flip-card">
-            <div class="flip-card-inner">
-                <div class="flip-card-front">
 
-                </div>
-                <div class="flip-card-back">
-                    <h1></h1>
-                    <p></p>
-                    <p></p>
-                </div>
-            </div>
-        </div>
-        <div class="flip-card">
-            <div class="flip-card-inner">
-                <div class="flip-card-front">
 
-                </div>
-                <div class="flip-card-back">
-                    <h1></h1>
-                    <p></p>
-                    <p></p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- <div id="header-wrapper">
-        <div id="header" class="container">
-            <header class="sc-bwzfXH gFvcIX"><a href="/"><img src="/static/media/spacex-logo.9250222f.svg"
-                        alt="SpaceX logo"></a>
-                <nav class="sc-bdVaJa imXhqw">
-                    <ul>
-                        <li><a href="/launches" class="active" aria-current="page">Launches</a></li>
-                        <li><a href="/rockets">Rockets</a></li>
-                        <li><a href="/capsules">Capsules</a></li>
-                    </ul>
-                </nav>
-            </header> -->
-    <!-- <nav class="navbar navbar-expand-lg navbar-light bg-white">
-                <div class="container-fluid">
-                  <a class="navbar-brand" href="#">SpaceX Fan Site</a>
-                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                  </button>
-                  <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                    <ul class="navbar-nav">
-                      <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="#">Launches</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="#">Rockets</a>
-                      </li>
-                      <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                          Related Articles
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                          <li><a class="dropdown-item" href="#">Action</a></li>
-                          <li><a class="dropdown-item" href="#">Another action</a></li>
-                          <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </nav> -->
-    <!-- <article>
-                <header class="article-header">
-                    <h1>Elon Shoots For The Stars</h1>
-                </header>
-                <div id="card-container">
-                    <class class="card" style="width: 18rem;">
-                        <img src="ELON.SPACEX.web_.jpg.jpeg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the card's content.</p>
-                        </div>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">An item</li>
-                            <li class="list-group-item">A second item</li>
-                            <li class="list-group-item">A third item</li>
-                        </ul>
-                        <div class="card-body">
-                            <a href="#" class="card-link">Card link</a>
-                            <a href="#" class="card-link">Another link</a>
-                        </div>
-                    </class>
-                    <class class="card" style="width: 18rem;">
-                        <img src="ELON.SPACEX.web_.jpg.jpeg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the card's content.</p>
-                        </div>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">An item</li>
-                            <li class="list-group-item">A second item</li>
-                            <li class="list-group-item">A third item</li>
-                        </ul>
-                        <div class="card-body">
-                            <a href="#" class="card-link">Card link</a>
-                            <a href="#" class="card-link">Another link</a>
-                        </div>
-                    </class>
-                    <class class="card" style="width: 18rem;">
-                        <img src="ELON.SPACEX.web_.jpg.jpeg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the card's content.</p>
-                        </div>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">An item</li>
-                            <li class="list-group-item">A second item</li>
-                            <li class="list-group-item">A third item</li>
-                        </ul>
-                        <div class="card-body">
-                            <a href="#" class="card-link">Card link</a>
-                            <a href="#" class="card-link">Another link</a>
-                        </div>
-                    </class>
-                    <class class="card" style="width: 18rem;">
-                        <img src="ELON.SPACEX.web_.jpg.jpeg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the card's content.</p>
-                        </div>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">An item</li>
-                            <li class="list-group-item">A second item</li>
-                            <li class="list-group-item">A third item</li>
-                        </ul>
-                        <div class="card-body">
-                            <a href="#" class="card-link">Card link</a>
-                            <a href="#" class="card-link">Another link</a>
-                        </div>
-                    </class>
-                    <class class="card" style="width: 18rem;">
-                        <img src="ELON.SPACEX.web_.jpg.jpeg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the card's content.</p>
-                        </div>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">An item</li>
-                            <li class="list-group-item">A second item</li>
-                            <li class="list-group-item">A third item</li>
-                        </ul>
-                        <div class="card-body">
-                            <a href="#" class="card-link">Card link</a>
-                            <a href="#" class="card-link">Another link</a>
-                        </div>
-                    </class>
-                    <class class="card" style="width: 18rem;">
-                        <img src="ELON.SPACEX.web_.jpg.jpeg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the card's content.</p>
-                        </div>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">An item</li>
-                            <li class="list-group-item">A second item</li>
-                            <li class="list-group-item">A third item</li>
-                        </ul>
-                        <div class="card-body">
-                            <a href="#" class="card-link">Card link</a>
-                            <a href="#" class="card-link">Another link</a>
-                        </div>
-                    </class>
-                    <class class="card" style="width: 18rem;">
-                        <img src="ELON.SPACEX.web_.jpg.jpeg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the card's content.</p>
-                        </div>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">An item</li>
-                            <li class="list-group-item">A second item</li>
-                            <li class="list-group-item">A third item</li>
-                        </ul>
-                        <div class="card-body">
-                            <a href="#" class="card-link">Card link</a>
-                            <a href="#" class="card-link">Another link</a>
-                        </div>
-                    </class>
-                    <class class="card" style="width: 18rem;">
-                        <img src="ELON.SPACEX.web_.jpg.jpeg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the card's content.</p>
-                        </div>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">An item</li>
-                            <li class="list-group-item">A second item</li>
-                            <li class="list-group-item">A third item</li>
-                        </ul>
-                        <div class="card-body">
-                            <a href="#" class="card-link">Card link</a>
-                            <a href="#" class="card-link">Another link</a>
-                        </div>
-                    </class>
-                </div>
-            </article>
-        </div> -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
-        crossorigin="anonymous"></script>
-    <script src="js/script.js"></script>
-
-    <div id="root">
-
-    </div>
-
-</body>
+            < </body>
 
 </html>
