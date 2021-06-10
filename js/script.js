@@ -1,40 +1,19 @@
 "use strict";
 
-const searchMissionNameButton = document.querySelector("#search-mission-name-button");
-searchMissionNameButton.addEventListener("click", function(){
-    const searchMissonNameInput = document.querySelector("#search-mission-name-input");
-    ClearCardDiv();
-    FetchLaunchByName(searchMissonNameInput.value);
-    AddCardEventListeners()
-})
-
-const searchMissionDateButton = document.querySelector("#search-mission-date-button");
-searchMissionDateButton.addEventListener("click", function(){
+const searchMissionButton = document.querySelector("#search-mission-button");
+searchMissionButton.addEventListener("click", function (){
+    //capture input
     const searchMissonDateStartInput = document.querySelector("#search-mission-date-start-input");
     const searchMissonDateEndInput = document.querySelector("#search-mission-date-end-input");
+    const searchMissonNameInput = document.querySelector("#search-mission-name-input");
+
+    //clear div
     ClearCardDiv();
-    if(searchMissonDateStartInput.value != "")
-    {
-        console.log(searchMissonDateStartInput.value);
-    }
-    else
-    {
-        console.log("Please enter a start date!");
-    }
-    if(searchMissonDateStartInput.value != "")
-    {
-        console.log(searchMissonDateEndInput.value);
-    }
-    else
-    {
-        console.log("Please enter an end date!");
-    }
-    if(searchMissonDateStartInput.value && searchMissonDateEndInput.value != "")
-    {
-        FetchLaunchByDate(searchMissonDateStartInput.value,searchMissonDateEndInput.value);
-        AddCardEventListeners()
-    }
-    
+
+    //fetch
+    FetchPastLaunchesSearch(searchMissonNameInput.value, searchMissonDateStartInput.value, searchMissonDateEndInput.value);
+
+    //process with inputs
 })
 
 document.addEventListener("DOMContentLoaded", function (){
@@ -43,22 +22,6 @@ document.addEventListener("DOMContentLoaded", function (){
     FetchPastLaunches();
     AddCardEventListeners()
 })
-
-//template for fetch command
-function FetchTemplate()
-{
-    fetch()
-        .then(function (response){
-            return response.json();
-        }) 
-        .then(function (data){
-            return data;
-        })
-        .catch(function (error){
-            console.error("ERROR: ", error);
-            return error;
-        })
-}
 
 function AddCardEventListeners()
 {
@@ -114,14 +77,14 @@ function FetchPastLaunchesCallback(data)
     }
 }
 
-function FetchLaunchByName(searchInput)
+function FetchPastLaunchesSearch(searchNameInput, startDateInput, endDateInput)
 {
-    fetch('https://api.spacexdata.com/v4/launches')
+    fetch('https://api.spacexdata.com/v4/launches/past')
         .then(function (response){
             return response.json();
         }) 
         .then(function (data){
-            FetchLaunchByNameCallback(data, searchInput);
+            FetchPastLaunchesSearchCallback(data,searchNameInput, startDateInput, endDateInput);
             return data;
         })
         .catch(function (error){
@@ -130,48 +93,92 @@ function FetchLaunchByName(searchInput)
         })
 }
 
-function FetchLaunchByNameCallback(data, searchInput)
+function FetchPastLaunchesSearchCallback(data, searchNameInput, startDateInput, endDateInput)
 {
-    for (var i = 0; i < data.length; i++)
-    {
-        if(data[i].name.includes(searchInput))
-        {
-            BuildLaunchElement(data[i]);
-        }
-    }
-}
-
-function FetchLaunchByDate(startDate, endDate)
-{
-    fetch('https://api.spacexdata.com/v4/launches')
-    .then(function (response){
-        return response.json();
-    }) 
-    .then(function (data){
-        FetchLaunchByDateCallback(data, startDate, endDate);
-        return data;
-    })
-    .catch(function (error){
-        console.error("ERROR: ", error);
-        return error;
-    })
-}
-
-function FetchLaunchByDateCallback(data, startDateInput, endDateInput)
-{
-    //parse dates
-    const startDate = Date.parse(startDateInput);
-    const endDate = Date.parse(endDateInput);
-
+    console.log("Search Name Input: " + searchNameInput);
+    console.log("Start Date Input:" + startDateInput);
+    console.log("End Date Input: " + endDateInput);
+    console.log("\n");
+    
     //for all of the launches returned
     for (var i = 0; i < data.length; i++)
     {
         const launchDate = new Date(data[i].date_utc);
-        //if the launchDate is between the start/end dates, create a card for it
-        if(launchDate >= startDate && launchDate <= endDate)
+        const myLaunchName = data[i].name;
+        let nameMatch = false;
+        let startDateMatch = false;
+        let endDateMatch = false;
+        
+        //if the launch name field is not empty
+        if(searchNameInput != "")
         {
+            if(myLaunchName.includes(searchNameInput))
+            {
+                nameMatch = true;
+            }
+            else
+            {
+                nameMatch = false;
+            }
+        }
+        else
+        {
+            //if the field is empty, set the match variable to true to ignore this field
+            nameMatch = true;
+        }
+
+        //if the startDate field is not empty
+        if(startDateInput != "")
+        {
+            const startDateInputObj = new Date(startDateInput);
+            const startDate = Date.parse(startDateInputObj);
+            //if the launch date is greater than the start date
+            if(Date.parse(launchDate) >= startDate)
+            {
+                //flag it as a match
+                startDateMatch = true;
+            }
+            else
+            {
+                //flag it as not a match
+                startDateMatch = false;
+            }
+        }
+        else
+        {
+            //if the field is empty, set the match variable to true to ignore this field
+            startDateMatch = true;
+        }
+        //if the endDate field is not empty
+        if(endDateInput != "")
+        {
+            const endDateInputObj = new Date(endDateInput);
+            const parsedEndDateInput = Date.parse(endDateInputObj);
+            //if the launch date is less than the endDate
+            if(Date.parse(launchDate) <= parsedEndDateInput)
+            {
+                //flag it as a match
+                endDateMatch = true;
+            }
+            else
+            {
+
+                //flag it as not a match
+                endDateMatch = false;
+            }
+        }
+        else
+        {
+            //if the field is empty, set the match variable to true to ignore this field
+            endDateMatch = true;
+        }
+
+        if(nameMatch && startDateMatch && endDateMatch === true)
+        {
+            console.log("adding card");
             BuildLaunchElement(data[i]);
         }
+
     }
 }
 
@@ -211,6 +218,9 @@ function BuildLaunchElement(launchInfo)
     newLaunchList.className = "list-group list-group-flush";
 
 
+    //NEW Create main elements
+
+
     //create children elements
     const missionNameElement = document.createElement("h5");
     missionNameElement.className = "card-title";
@@ -239,7 +249,7 @@ function BuildLaunchElement(launchInfo)
     missionNameElement.innerText = missionName;
     flightNumberElement.innerText = "Flight Number: " + flightNumber;
 
-    console.log(String(launchSuccess));
+    //console.log(String(launchSuccess));
     if(String(launchSuccess) === "true")
     {
         launchSuccessElement.innerText = "Launch Success";
@@ -295,3 +305,10 @@ function ClearCardDiv()
         div.removeChild(div.firstChild);
     }
 }
+
+const turnCards = document.querySelectorAll(".flip-card-inner");
+
+function flipCard() {
+    this.classList.toggle("flip");
+}
+turnCards.forEach((card) => card.addEventListener("click", flipCard));
