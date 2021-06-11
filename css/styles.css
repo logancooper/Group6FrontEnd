@@ -83,6 +83,7 @@ ul {
 }
 
 .header {
+
     position: relative;
     background-image: url('../images/header.jpg');
     background-size: cover;
@@ -93,6 +94,11 @@ ul {
     background-attachment: unset;
 }
 
+
+body.home .header {
+	height: 50vh;
+
+}
 .header:before {
     content: '';
     display: inline-block;
@@ -126,6 +132,7 @@ ul {
 .header h1 a {
     color: inherit;
 }
+
 
 .header .button {
     display: inline-block;
@@ -214,7 +221,10 @@ button,
     cursor: pointer;
     outline: 0;
     font-weight: 300;
+
 }
+
+
 
 .card {
     box-shadow: 0 8px 16px 0 rgb(5, 5, 5);
@@ -231,6 +241,10 @@ button,
 
 .failure-card:hover {
     box-shadow: 0 8px 16px 0 rgb(255, 0, 0);
+}
+
+.neutral-card:hover {
+	box-shadow: 0 8px 16px 0 rgb(17, 0, 255);
 }
 
 #card-container {
@@ -271,33 +285,35 @@ button,
     margin: 20px;
 }
 
-.flex-box1 div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+
+.flex-box1>div {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
 }
 
 .search-box {
-    background-color: #ff9e2c;
-    flex: 1;
-    padding: 1rem;
+	background-color: white;
+	flex: 1;
+	padding: 1rem;
+	align-items: center;
+
+}
+form {
+	align-items: center;
+
+
 }
 
-.roadster-display {
-    background-color: #b6701e;
-    flex: 1;
-    padding: 1rem;
+form>h2 {
+	color: #df7366;
+	text-shadow: 2px 2px 4px #f0e1e1;
 }
 
-.video-container {
-    background-color: white;
-    flex: 1;
-    padding: 1rem;
-    align-items: center;
-}
 
 fieldset {
-    border: none;
+	border: none;
 }
 
 .box2 {
@@ -312,29 +328,52 @@ fieldset {
 }
 
 .footer {
-    display: flex;
-    margin: 20px;
+	display: flex;
+	margin: 20px;
+	flex: 1;
+	min-height: 20vh;
+
+	
 }
 
 .footer div {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	justify-content: center;
+
 }
 
 .social-links {
-    background-color: whitesmoke;
-    flex: 1;
-    padding: 1rem;
+	background-color: whitesmoke;
+	padding: 1rem;
+	align-items: center;
+	border-radius: 4em;
+}
+
+.social-links article {
+	
+	padding: 1rem;
+	align-items: center;
+	margin: auto;
+
+}
+
+.social-links>article>a {
+	
+	margin: 1rem;
 }
 
 .fa {
-    padding: 20px;
-    font-size: 30px;
-    width: 50px;
-    text-align: center;
-    text-decoration: none;
-    margin: 5px 2px;
+	padding: 20px;
+	font-size: 30px;
+	width: 50px;
+	text-align: center;
+	text-decoration: none;
+	margin: 5px 2px;
+	background-color: white;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+	0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .fa:hover {
@@ -408,3 +447,4 @@ h1 {
     padding-top: 5px;
     font-size: 16px;
 }
+

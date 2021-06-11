@@ -287,7 +287,7 @@ body {
     background-color: transparent;
     border-radius: 50px;
     width: 500px;
-    height: 750px;
+    height: 550px;
     perspective: 1000px;
     margin: 1rem;
     display: inline-block;
@@ -335,4 +335,12 @@ body {
     /* background-image: url(https://alleslaw.com/wp-content/uploads/2018/01/background_white_hexagon.jpg); */
     background-position: center;
     transform: rotateY(180deg);
-}
+  } 
+
+  .card-img-top
+  {
+	  width: 50%;
+	  height: 50%;
+	  object-fit: contain;
+  }
+
