@@ -182,7 +182,6 @@ h3,
 h4,
 h6 {
 	font-weight: 400;
-	color: white;
 	line-height: 1.25em;
 }
 
@@ -334,16 +333,14 @@ button,
   
   .flip-card-front {
     border-radius: 25px;
-    background-image: url(https://cdn.hipwallpaper.com/i/15/97/DuNyZ2.jpg);
+    /*background-image: url(https://cdn.hipwallpaper.com/i/15/97/DuNyZ2.jpg);*/
     background-position: center;
-    color: white;
     overflow: hidden;
   }
   
   .flip-card-back {
     border-radius: 25px;
-    background-image: url(https://cdn.hipwallpaper.com/i/15/97/DuNyZ2.jpg);
+    /*background-image: url(https://cdn.hipwallpaper.com/i/15/97/DuNyZ2.jpg);*/
     background-position: center;
-    color: white;
     transform: rotateY(180deg);
   } 
