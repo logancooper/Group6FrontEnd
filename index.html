@@ -5,11 +5,10 @@
     <title>Space X Fan Site</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="css/styles.css" />
-	<link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style.css" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
@@ -23,11 +22,27 @@
                 <header>
                     <h1><a href="index.html" id="logo">Space X Fan site</a></h1>
                     <hr />
-                    <p>Dragon Docking Simulator </p>
+                    <h2>COUNTDOWN TO UPCOMING LAUNCH</h2>
+                    <div id="clockdiv">
+                        <div>
+                            <span class="days"></span>
+                            <div class="text">Days</div>
+                        </div>
+                        <div>
+                            <span class="hours"></span>
+                            <div class="text">Hours</div>
+                        </div>
+                        <div>
+                            <span class="minutes"></span>
+                            <div class="text">Minutes</div>
+                        </div>
+                        <div>
+                            <span class="seconds"></span>
+                            <div class="text">Seconds</div>
+                        </div>
+                    </div>
                 </header>
-                <footer>
-                    <a href="https://iss-sim.spacex.com/" class="button circled scrolly">Play</a>
-                </footer>
+
             </div>
 
             <!-- Nav -->
@@ -64,14 +79,8 @@
 
             <p>
 
-                Space Exploration Technologies Corp. is an American aerospace manufacturer, space transportation
-                services
-                and
-                communications company headquartered in Hawthorne, California. SpaceX was founded in 2002 by Elon
-                Musk with
-                the goal of
-                reducing space transportation costs to enable the colonization of Mars. This website celebrates the
-                achievements and contributions of Space X to human kind.
+                Space Exploration Technologies Corp. is an American aerospace manufacturer, space transportation services and communications company headquartered in Hawthorne, California. SpaceX was founded in 2002 by Elon Musk with the goal of reducing space transportation
+                costs to enable the colonization of Mars. This website celebrates the achievements and contributions of Space X to human kind.
             </p>
 
 
@@ -94,7 +103,7 @@
                                 <input type="date" id="search-mission-date-end-input" name="mission-date">
                             </label>
                         </fieldset>
-						            <button type="button" id="search-mission-button">Search</button>
+                        <button type="button" id="search-mission-button">Search</button>
                     </form>
                 </article>
             </div>
@@ -102,10 +111,7 @@
             <div class="video-container">
                 <article>
 
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/7CZTLogln34"
-                        title="YouTube video player" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/7CZTLogln34" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
                 </article>
             </div>
@@ -123,8 +129,7 @@
                 <article>
 
                     <a href="https://www.facebook.com/groups/spacexgroup/" class="fa fa-facebook"></a>
-                    <a href="https://twitter.com/SpaceX?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"
-                        class="fa fa-twitter"></a>
+                    <a href="https://twitter.com/SpaceX?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" class="fa fa-twitter"></a>
                     <a href="https://www.linkedin.com/company/spacex/" class="fa fa-linkedin"></a>
                     <a href="https://www.youtube.com/user/spacexchannel" class="fa fa-youtube"></a>
                     <a href="https://www.instagram.com/spacex/" class="fa fa-instagram"></a>
@@ -148,14 +153,12 @@
 
         </div>
         <!-- Cards -->
-        <div id="card-container" class="container-fluid"> 
-			
-		    </div>
-      </div>
-              <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
-                integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
-                crossorigin="anonymous"></script>
-            <script src="js/script.js"></script>
-      </body>
+        <div id="card-container" class="container-fluid">
+
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
+</body>
 
 </html>
