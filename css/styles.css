@@ -254,6 +254,10 @@ button,
 	box-shadow: 0 8px 16px 0 rgb(255, 0, 0);
 }
 
+.neutral-card:hover {
+	box-shadow: 0 8px 16px 0 rgb(17, 0, 255);
+}
+
 #card-container {
 	padding: 2px 16px;
 	margin: auto;
@@ -305,22 +309,8 @@ button,
 }
 
 .search-box {
-	background-color: #ff9e2c;
 	flex: 1;
 	padding: 1rem;
-}
-
-.roadster-display {
-	background-color: #b6701e;
-	flex: 1;
-	padding: 1rem;
-}
-
-.video-container {
-	background-color: white;
-	flex: 1;
-	padding: 1rem;
-	align-items: center;
 }
 
 fieldset {
