@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Space X Fan Site</title>
+    <title>SpaceX Launch Tracker</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="stylesheet" href="css/style.css" />
@@ -21,21 +21,15 @@
             <!-- Inner -->
             <div class="inner">
                 <header>
-                    <h1><a href="index.html" id="logo">Space X Fan site</a></h1>
-                    <hr />
-                    <p>Dragon Docking Simulator </p>
-                </header>
-                <footer>
-                    <a href="https://iss-sim.spacex.com/" class="button circled scrolly">Play</a>
-                </footer>
+                    <h1><a href="index.html" id="logo">SpaceX Launch Tracker</a></h1>
+
             </div>
 
             <!-- Nav -->
             <nav class="nav">
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li>
-                        <a href="#">Explore</a>
+                    <li><a href="#">Explore</a>
                         <ul>
                             <li><a href="#">About Space X</a></li>
                             <li><a href="#">Become a fan</a></li>
@@ -54,28 +48,31 @@
                     </li>
 
                     <li><a href="right-sidebar.html">Launch Schedule</a></li>
+                    <li><a href="https://iss-sim.spacex.com/" l>Dragon Docking Simulator</a></li>
                     <li><a href="no-sidebar.html">About Us</a></li>
                 </ul>
             </nav>
         </div>
 
-        <!-- flex box for search-->
         <section class="flex-box1">
             <div class="search-box">
                 <article>
                     <form>
-                        <h2><strong>Search Space Launch Information</strong></h2>
+                        <h2><strong>Search SpaceX Launch Information</strong></h2>
+                        
                         <fieldset>
                             <label> Search by mission
                                 <input type="text" id="search-mission-name-input" placeholder="Enter mission name" />
                             </label>
                         </fieldset>
+
                         <fieldset>
                             <label> Search by mission date
                                 <input type="date" id="search-mission-date-start-input" name="mission-date">
                                 <input type="date" id="search-mission-date-end-input" name="mission-date">
                             </label>
                         </fieldset>
+
                         <fieldset>
                             <h5>Launch Result</h5>
                             <label> Launch Successful
@@ -96,40 +93,32 @@
 
         <div id=mission-info>
 
-            <p id="Search-results" align="center"> Search results here </p>
-
+            <p id="Search-results" align="center"> Search Result </p>
         </div>
+
         <!-- Cards -->
         <div id="card-container" class="container-fluid">
 
         </div>
     </div>
 
+<section class="footer ">
+    <div class="social-links">
+        <article>
 
-    <!-- footer, will move it below card container-->
+            <a href="https://www.facebook.com/groups/spacexgroup/" class="fa fa-facebook"></a>
+            <a href="https://twitter.com/SpaceX?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"
+                class="fa fa-twitter"></a>
+            <a href="https://www.linkedin.com/company/spacex/" class="fa fa-linkedin"></a>
+            <a href="https://www.youtube.com/user/spacexchannel" class="fa fa-youtube"></a>
+            <a href="https://www.instagram.com/spacex/" class="fa fa-instagram"></a>
+        </article>
 
-    <section class="footer ">
-        <div class="social-links">
-            <article>
-                <a href="https://www.facebook.com/groups/spacexgroup/" class="fa fa-facebook"></a>
-                <a href="https://twitter.com/SpaceX?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"
-                    class="fa fa-twitter"></a>
-                <a href="https://www.linkedin.com/company/spacex/" class="fa fa-linkedin"></a>
-                <a href="https://www.youtube.com/user/spacexchannel" class="fa fa-youtube"></a>
-                <a href="https://www.instagram.com/spacex/" class="fa fa-instagram"></a>
+        <p> &copy; SpaceX Launch Tracker. All rights reserved. </p>
+        <p> Design: Three Cool Guys </p>
+    </div>
+</section>
 
-                <div class=" copyright-container">
-                    <ul id="copyright">
-                        <li>&copy; SpaceX Fan Site. All rights reserved.</li>
-                        <li>Design: Three Cool Guys</li>
-                    </ul>
-
-                </div>
-
-            </article>
-        </div>
-
-    </section>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
         crossorigin="anonymous"></script>

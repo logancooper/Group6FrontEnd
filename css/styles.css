@@ -73,9 +73,6 @@ body.home.header:after {
 	display: none;
 }
 
-
-
-
 body {
 	line-height: 1.5;
 
@@ -87,7 +84,6 @@ body {
 
 }
 
-
 ol,
 ul {
 	list-style: none;
@@ -97,15 +93,21 @@ ul {
 .header {
 	position: relative;
 	background-image: url('../images/header.jpg');
+	background-repeat: no-repeat;
 	background-size: cover;
 	color: #fff;
 	text-align: center;
 	padding: 7.5em 0 2em 0;
 	cursor: default;
-	background-attachment: unset;
+	background-attachment: fixed;
 
 }
 
+
+body.home .header {
+	height: 50vh;
+
+}
 
 .header:before {
 	content: '';
@@ -139,17 +141,6 @@ ul {
 
 .header h1 a {
 	color: inherit;
-}
-
-.header .button {
-	display: inline-block;
-	border-radius: 100%;
-	width: 4.5em;
-	height: 4.5em;
-	line-height: 4.5em;
-	text-align: center;
-	font-size: 1.25em;
-	padding: 0;
 }
 
 .header hr {
@@ -204,8 +195,6 @@ h6 strong {
 	font-weight: 600;
 }
 
-
-
 label {
 	display: block;
 	width: 100%;
@@ -218,9 +207,7 @@ input[type="button"],
 input[type="submit"],
 input[type="reset"],
 button,
-.button {
-	position: relative;
-	display: inline-block;
+#search-mission-button {
 	background: #df7366;
 	color: #fff;
 	text-align: center;
@@ -231,9 +218,16 @@ button,
 	cursor: pointer;
 	outline: 0;
 	font-weight: 300;
+}
 
+#search-mission-button {
+	transition: background-color 0.35s ease-in-out,
+	color 0.35s ease-in-out,
+	border-bottom-color 0.35s ease-in-out;
 
 }
+
+
 
 .card {
 	box-shadow: 0 8px 16px 0 rgb(5, 5, 5);
@@ -301,7 +295,7 @@ button,
 
 }
 
-.flex-box1 div {
+.flex-box1>div {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -309,13 +303,26 @@ button,
 }
 
 .search-box {
+	background-color: white;
 	flex: 1;
 	padding: 1rem;
+	align-items: center;
+
 }
+form {
+	align-items: center;
+
+}
+
+form>h2 {
+	color: #df7366;
+	text-shadow: 2px 2px 4px #f0e1e1;
+}
+
 
 fieldset {
 	border: none;
-
+	
 }
 
 .box2 {
@@ -334,20 +341,38 @@ fieldset {
 .footer {
 	display: flex;
 	margin: 20px;
+	flex: 1;
+	min-height: 20vh;
 
+	
 }
 
 .footer div {
 	display: flex;
-	flex-direction: row;
+	flex: 1;
+	flex-direction: column;
 	justify-content: center;
 
 }
 
 .social-links {
 	background-color: whitesmoke;
-	flex: 1;
 	padding: 1rem;
+	align-items: center;
+	border-radius: 4em;
+}
+
+.social-links article {
+	
+	padding: 1rem;
+	align-items: center;
+	margin: auto;
+
+}
+
+.social-links>article>a {
+	
+	margin: 1rem;
 }
 
 
@@ -358,6 +383,9 @@ fieldset {
 	text-align: center;
 	text-decoration: none;
 	margin: 5px 2px;
+	background-color: white;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+	0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .fa:hover {
@@ -392,3 +420,5 @@ fieldset {
 .copyright-container ul>li {
 	 align-items: center;
 }
+
+
