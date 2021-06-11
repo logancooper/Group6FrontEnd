@@ -12,27 +12,14 @@ searchMissionButton.addEventListener("click", function (){
 
     //fetch
     FetchPastLaunchesSearch(searchMissonNameInput.value, searchMissonDateStartInput.value, searchMissonDateEndInput.value);
-
-    //process with inputs
+    
 })
 
 document.addEventListener("DOMContentLoaded", function (){
     //Fetch the past launches
     ClearCardDiv();
     FetchPastLaunches();
-    AddCardEventListeners()
 })
-
-function AddCardEventListeners()
-{
-    const cards = document.querySelectorAll('.card');
-
-    cards.forEach(function(card) {
-      card.addEventListener('click', function() {
-        card.classList.toggle('focused');
-      })
-    })
-}
 
 //template for fetch command
 function FetchTemplate()
@@ -204,46 +191,64 @@ function BuildLaunchElement(launchInfo)
     const redditMediaLink = redditLinks.media;
     const redditRecoveryLink = redditLinks.recovery;
 
-    //Create the main elements
-    const container = document.querySelector("#card-container");
-    const newLaunch = document.createElement("class");
-    newLaunch.className = "card"
-    newLaunch.setAttribute("style", "width: 18rem");
-    const newLaunchCardBody = document.createElement("div");
-    newLaunchCardBody.className = "card-body";
-    const testImageElement = document.createElement("img");
-    testImageElement.setAttribute("src", launchPatchSmall);
-    testImageElement.className = "card-img-top";
-    const newLaunchList = document.createElement("ul");
-    newLaunchList.className = "list-group list-group-flush";
-
-
     //NEW Create main elements
+    const cardContainer = document.querySelector("#card-container");
+    
+    const newLaunchCard = document.createElement("div");
+    newLaunchCard.className = "flip-card";
+    newLaunchCard.setAttribute("style", "width: 18rem");
+    
+    const newLaunchCardInner = document.createElement("div");
+    newLaunchCardInner.className = "flip-card-inner";
+    
+    const newLaunchCardFront = document.createElement("div");
+    newLaunchCardFront.className = "flip-card-front";
 
+    const cardFrontImageElement = document.createElement("img");
+    cardFrontImageElement.setAttribute("src", launchPatchSmall);
+    cardFrontImageElement.className = "card-img-top";
 
+    const cardFrontBody = document.createElement("div");
+    cardFrontBody.className = "card-body";
+
+    const cardFrontList = document.createElement("ul");
+    cardFrontList.className = "list-group list-group-flush";
+
+    const newLaunchCardBack = document.createElement("div");
+    newLaunchCardBack.className = "flip-card-back";
+    
+    const cardBackBody = document.createElement("div");
+    cardBackBody.className = "details";
+    
+    const missionDetailsHeader = document.createElement("h3");
+    missionDetailsHeader.innerText = "Mission Details";
+    cardBackBody.append(missionDetailsHeader);
+
+    const cardBackList = document.createElement("ul");
+    
     //create children elements
     const missionNameElement = document.createElement("h5");
     missionNameElement.className = "card-title";
+    const moreInfoElement = document.createElement("p");
+    moreInfoElement.className = "card-text";
     const flightNumberElement = document.createElement("li");
     flightNumberElement.className = "list-group-item";
     const launchSuccessElement = document.createElement("li");
     launchSuccessElement.className = "list-group-item";
-    const launchDetailsElement = document.createElement("p");
-    launchDetailsElement.className = "card-text";
     const launchDateUTCElement = document.createElement("li");
     launchDateUTCElement.className = "list-group-item";
-    
-
-    const launchPatchSmallElement = document.createElement("p");
-    const launchPatchLargeElement = document.createElement("p");
-    const imagesSmallElement = document.createElement("p");
-    const imagesOriginalElement = document.createElement("p");
-
-    const articleLinkElement = document.createElement("p");
-    const redditLinksElement = document.createElement("p");
-    const pressKitElement = document.createElement("p");
-    const webCastLinkElement = document.createElement("p");
-    const wikipediaLinkElement = document.createElement("p");
+    const launchDetailsElement = document.createElement("p");
+    launchDetailsElement.className = "card-text";
+    const articleLinkElement = document.createElement("a");
+    articleLinkElement.setAttribute("href", articleLink);
+    const redditLinksElement = document.createElement("a");
+    redditLinksElement.setAttribute("href", redditCampaignLink);
+    const pressKitElement = document.createElement("a");
+    pressKitElement.setAttribute("href", pressKit);
+    const webCastLinkElement = document.createElement("a");
+    webCastLinkElement.setAttribute("href", webCastLink);
+    const wikipediaLinkElement = document.createElement("a");
+    wikipediaLinkElement.setAttribute("href", wikipediaLink);
 
     //Set the innertext of each element to display the data
     missionNameElement.innerText = missionName;
@@ -253,47 +258,57 @@ function BuildLaunchElement(launchInfo)
     if(String(launchSuccess) === "true")
     {
         launchSuccessElement.innerText = "Launch Success";
-        newLaunch.className = "card success-card"
+        newLaunchCard.className = "flip-card success-card"
     }
     else if(String(launchSuccess) === "false")
     {
         launchSuccessElement.innerText = "Launch Failure";
-        newLaunch.className = "card failure-card"
+        newLaunchCard.className = "flip-card failure-card"
     }
     
-    launchDetailsElement.innerText = "Click for flight details";
+    moreInfoElement.innerText = "Click for more info";
+    launchDetailsElement.innerText = launchDetails;
     launchDateUTCElement.innerText = "Launch Date: " + launchDateUTC;
-    articleLinkElement.innerText = "Article Link: " + articleLink;
-    launchPatchSmallElement.innerText = "Launch Patch (Small): " + launchPatchSmall;
-    launchPatchLargeElement.innerText = "Launch Patch (Large): " + launchPatchLarge;
-    imagesSmallElement.innerText = "Images (Small): " + imagesSmall;
-    imagesOriginalElement.innerText = "Images (Original): " + imagesOriginal;
-    redditLinksElement.innerText = "Reddit Campaign Link: " + redditCampaignLink + "\n" + "Reddit Launch Link: " + redditLaunchLink + "\n" + "Reddit Media Link: " + redditMediaLink + "\n" + "Reddit Recovery Link: " + redditRecoveryLink + "\n";
-    pressKitElement.innerText = "Press Kit: " + pressKit;
-    webCastLinkElement.innerText = "WebCast Link: " + webCastLink;
-    wikipediaLinkElement.innerText = "Mission Wikipedia: " + wikipediaLink;
+    articleLinkElement.innerText = "Article";
+    redditLinksElement.innerText = "Reddit Campaign Link";
+    pressKitElement.innerText = "Press Kit";
+    webCastLinkElement.innerText = "WebCast Link";
+    wikipediaLinkElement.innerText = "Mission Wikipedia";
 
     //append each element to the new launch div
-    newLaunchCardBody.append(missionNameElement);
-    newLaunchCardBody.append(launchDetailsElement);
-    newLaunchList.append(flightNumberElement);
-    newLaunchList.append(launchSuccessElement);
-    newLaunchList.append(launchDateUTCElement);
-    newLaunch.append(testImageElement);
-    newLaunch.append(newLaunchCardBody);
-    newLaunch.append(newLaunchList);
-    //newLaunch.append(articleLinkElement);
-    //newLaunch.append(launchPatchSmallElement);
-    //newLaunch.append(launchPatchLargeElement);
-    //newLaunch.append(imagesSmallElement);
-    //newLaunch.append(imagesOriginalElement);
-    //newLaunch.append(redditLinksElement);
-    //newLaunch.append(pressKitElement);
-    //newLaunch.append(webCastLinkElement);
-    //newLaunch.append(wikipediaLinkElement);
-    //newLaunch.append(document.createElement("hr"))
-    //append the new launch div to the root
-    container.append(newLaunch);
+
+    //card back
+    cardBackBody.append(missionDetailsHeader);
+    cardBackBody.append(launchDetailsElement);
+    cardBackList.append(articleLinkElement);
+    cardBackList.append(redditLinksElement);
+    cardBackList.append(webCastLinkElement);
+    cardBackList.append(wikipediaLinkElement);
+    cardBackList.append(pressKitElement);
+    cardBackBody.append(cardBackList);
+    newLaunchCardBack.append(cardBackBody);
+    
+    //card front
+    cardFrontBody.append(missionNameElement);
+    cardFrontBody.append(moreInfoElement);
+    cardFrontList.append(flightNumberElement);
+    cardFrontList.append(launchSuccessElement);
+    cardFrontList.append(launchDateUTCElement);
+    newLaunchCardFront.append(cardFrontImageElement);
+    newLaunchCardFront.append(cardFrontBody);
+    newLaunchCardFront.append(cardFrontList);
+    
+    //card inner
+    newLaunchCardInner.append(newLaunchCardFront);
+    newLaunchCardInner.append(newLaunchCardBack);
+    newLaunchCard.append(newLaunchCardInner);
+
+    newLaunchCardInner.addEventListener("click", function(){
+        newLaunchCardInner.classList.toggle("flip");
+    })
+    
+    //card container
+    cardContainer.append(newLaunchCard);
 
 }
 
@@ -306,9 +321,3 @@ function ClearCardDiv()
     }
 }
 
-const turnCards = document.querySelectorAll(".flip-card-inner");
-
-function flipCard() {
-    this.classList.toggle("flip");
-}
-turnCards.forEach((card) => card.addEventListener("click", flipCard));
