@@ -1,15 +1,15 @@
 "use strict";
-const searchMissonDateStartInput = document.querySelector("#search-mission-date-start-input");
-const searchMissonDateEndInput = document.querySelector("#search-mission-date-end-input");
-const searchMissonNameInput = document.querySelector("#search-mission-name-input");
-//const searchMissionLaunchSuccessRadio = document.getElementsByName("mission-result-radio");
-const searchMissionLaunchResultDropdown = document.querySelector("#launch-result-dropdown");
+
 const searchMissionButton = document.querySelector("#search-mission-button");
+const resetSearchButton = document.querySelector("#reset-button");
 
 
 searchMissionButton.addEventListener("click", function() {
     //capture input
-
+    const searchMissonDateStartInput = document.querySelector("#search-mission-date-start-input");
+    const searchMissonDateEndInput = document.querySelector("#search-mission-date-end-input");
+    const searchMissonNameInput = document.querySelector("#search-mission-name-input");
+    const searchMissionLaunchResultDropdown = document.querySelector("#launch-result-dropdown");
     //clear div
     ClearCardDiv();
 
@@ -18,8 +18,12 @@ searchMissionButton.addEventListener("click", function() {
     
 })
 
-const resetSearchButton = document.querySelector("#reset-button");
+
 resetSearchButton.addEventListener("click", function(){
+    const searchMissonDateStartInput = document.querySelector("#search-mission-date-start-input");
+    const searchMissonDateEndInput = document.querySelector("#search-mission-date-end-input");
+    const searchMissonNameInput = document.querySelector("#search-mission-name-input");
+    const searchMissionLaunchResultDropdown = document.querySelector("#launch-result-dropdown");
     ClearInput(searchMissonDateStartInput);
     ClearInput(searchMissonDateEndInput);
     ClearInput(searchMissonNameInput);
