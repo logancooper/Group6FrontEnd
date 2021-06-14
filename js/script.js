@@ -29,7 +29,6 @@ document.addEventListener("DOMContentLoaded", function() {
     //Fetch the past launches
     ClearCardDiv();
     FetchLaunches();
-    FetchNextLaunch();
 })
 
 //template for fetch command
@@ -410,51 +409,51 @@ function ClearInput(input) {
 
 
 
-updateLaunchCountdown(date_precision, endDate) {
+// updateLaunchCountdown(date_precision, endDate) {
 
 
-    function getTimeRemaining(launch) {
-        let t = Date.parse(launch) - Date.parse(new Date());
-        let seconds = Math.floor((t / 1000) % 60);
-        let minutes = Math.floor((t / 1000 / 60) % 60);
-        let hours = Math.floor((t / (1000 * 60 * 60)) % 24);
-        let days = Math.floor(t / (1000 * 60 * 60 * 24));
-        return {
-            total: t,
-            days: days,
-            hours: hours,
-            minutes: minutes,
-            seconds: seconds,
-        };
-    }
+//     function getTimeRemaining(launch) {
+//         let t = Date.parse(launch) - Date.parse(new Date());
+//         let seconds = Math.floor((t / 1000) % 60);
+//         let minutes = Math.floor((t / 1000 / 60) % 60);
+//         let hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+//         let days = Math.floor(t / (1000 * 60 * 60 * 24));
+//         return {
+//             total: t,
+//             days: days,
+//             hours: hours,
+//             minutes: minutes,
+//             seconds: seconds,
+//         };
+//     }
 
-    function updateClock() {
-        let t = getTimeRemaining(launch);
-        tminusSpan.innerHTML = `T-`;
-        daysSpan.innerHTML = `${t.days !== -1 ? t.days : 0}`;
-        hoursSpan.innerHTML = `${t.hours !== -1 ? t.hours : 0}`;
-        minsSpan.innerHTML = `${t.minutes !== -1 ? t.minutes : 0}`;
-        secsSpan.innerHTML = `${t.seconds}`;
-        if (t.total <= 0) {
-            clearInterval(timeinterval);
-        }
-    }
+//     function updateClock() {
+//         let t = getTimeRemaining(launch);
+//         tminusSpan.innerHTML = `T-`;
+//         daysSpan.innerHTML = `${t.days !== -1 ? t.days : 0}`;
+//         hoursSpan.innerHTML = `${t.hours !== -1 ? t.hours : 0}`;
+//         minsSpan.innerHTML = `${t.minutes !== -1 ? t.minutes : 0}`;
+//         secsSpan.innerHTML = `${t.seconds}`;
+//         if (t.total <= 0) {
+//             clearInterval(timeinterval);
+//         }
+//     }
 
-    if (date_precision !== 'hour') {
+//     if (date_precision !== 'hour') {
 
-        countdownDiv.innerHTML = 'Launch Time TBD';
-    } else {
-        updateClock();
-        var timeinterval = setInterval(updateClock, 1000);
-    }
-}
+//         countdownDiv.innerHTML = 'Launch Time TBD';
+//     } else {
+//         updateClock();
+//         var timeinterval = setInterval(updateClock, 1000);
+//     }
+// }
 
 
-const lastAPIGet = new Date(localStorage.getItem('https://api.spacexdata.com/v4/launches/next'));
-const dateComp = new Date(new Date().getTime() - 30 * 60000);
+// const lastAPIGet = new Date(localStorage.getItem('https://api.spacexdata.com/v4/launches/next'));
+// const dateComp = new Date(new Date().getTime() - 30 * 60000);
 
-if (lastAPIGet < dateComp) {
-    getFreshData();
-} else {
-    getUpcomingLaunches();
-}
+// if (lastAPIGet < dateComp) {
+//     getFreshData();
+// } else {
+//     getUpcomingLaunches();
+// }
