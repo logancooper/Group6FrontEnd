@@ -23,49 +23,27 @@ body.home.header:after {
 
 .nav {
     justify-content: center;
-    top: 0;
-    left: 0;
-    width: 100%;
+    display:flex;
+    
+}
+
+.banner {
+    padding: 60px;
+    margin-bottom: 20px;
     text-align: center;
-    padding: 1.5em 0 1.5em 0;
-    z-index: 1;
-    overflow: hidden;
-    display: flex;
+
+    color: white;
+    font-size: 30px;
+
+    justify-content: center;
+    padding-top: 10px;
+
 }
 
-.nav>ul {
-    line-height: 0px;
-    position: relative;
-    display: inline-block;
-    margin: 0;
-    height: 21px;
-    border-left: solid 2px rgba(192, 192, 192, 0.35);
-    border-right: solid 2px rgba(192, 192, 192, 0.35);
-}
+.banner {
+    padding-top: 10px;
+    z-index: 5;
 
-.nav>ul>li {
-    display: inline-block;
-    margin: -9px 0.5em 0 0.5em;
-    border-radius: 0.5em;
-    padding: 0.85em;
-    border: solid 1px transparent;
-}
-
-.nav>ul>li.active {
-    border-color: rgba(192, 192, 192, 0.35);
-}
-
-.nav>ul>li>a,
-.nav>ul>li>span {
-    display: block;
-    color: inherit;
-    text-decoration: none;
-    border: 0;
-    outline: 0;
-}
-
-.nav>ul>li>ul {
-    display: none;
 }
 
 body {
@@ -77,10 +55,6 @@ body {
     width: 100%;
 }
 
-ol,
-ul {
-    list-style: none;
-}
 
 .header {
     position: relative;
@@ -103,12 +77,6 @@ body.home .header {
     height: 50vh;
 }
 
-.header:before {
-    content: '';
-    display: inline-block;
-    vertical-align: middle;
-    height: 100%;
-}
 
 .header .inner {
     position: absolute;
@@ -118,39 +86,14 @@ body.home .header {
     vertical-align: middle;
 }
 
-.header header {
-    display: inline-block;
-}
+
 
 .header header>p {
     font-size: 1.25em;
     margin: 0;
 }
 
-.header h1 {
-    color: #fff;
-    font-size: 3em;
-    line-height: 1em;
-}
 
-.header h1 a {
-    color: inherit;
-}
-
-.header .button {
-    display: inline-block;
-    border-radius: 100%;
-    width: 4.5em;
-    height: 4.5em;
-    line-height: 4.5em;
-    text-align: center;
-    font-size: 1.25em;
-    padding: 0;
-}
-<<<<<<< HEAD
-=======
-
->>>>>>> 5e0592cef32ef73eef003cc2ced3b7f3e25783ae
 
 .header hr {
     top: 1.5em;
@@ -439,10 +382,85 @@ h1 {
 .text {
     padding-top: 5px;
     font-size: 16px;
-<<<<<<< HEAD
 }
-=======
+
+.navbar {
+	overflow: visible;
+	background-color: transparent;
+	justify-content: center;
+
 
 }
 
->>>>>>> 5e0592cef32ef73eef003cc2ced3b7f3e25783ae
+.navbar a {
+	float: left;
+	font-size: 16px;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+.dropdown {
+	float: left;
+	overflow: visible;
+}
+
+.dropdown .dropbtn {
+	font-size: 16px;
+	border: none;
+	outline: none;
+	color: white;
+	padding: 14px 16px;
+	background-color: inherit;
+	font-family: inherit;
+	margin: 0;
+}
+
+.navbar a:hover,
+.dropdown:hover .dropbtn {
+	background-color: #df7366;
+}
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #f9f9f9;
+	min-width: 200px;
+    height: 160px;
+	padding: 1px 2px;
+
+}
+
+.dropdown-content a {
+	float: none;
+	color: black;
+	text-decoration: none;
+	display: block;
+	text-align: left;
+    padding: 1px 2px;
+}
+
+.dropdown-content a:hover {
+	display: block;
+    background-color: #ddd;
+   
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    overflow:visible;
+   
+}
+
+.dropdown-content #live {
+	float: none;
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+	text-align: left;
+    
+
+}
+
