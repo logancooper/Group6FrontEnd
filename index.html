@@ -19,57 +19,40 @@
         <div class="header">
             <!-- Inner -->
             <div class="inner">
-                <header>
-
-                    <h1><a href="index.html" id="logo">SpaceX Launch Tracker</a></h1>
-                    <hr />
-                    <h2>COUNTDOWN TO UPCOMING LAUNCH</h2>
-                    <div id="clockdiv">
-                        <div>
-                            <span class="days"></span>
-                            <div class="text">Days</div>
-                        </div>
-                        <div>
-                            <span class="hours"></span>
-                            <div class="text">Hours</div>
-                        </div>
-                        <div>
-                            <span class="minutes"></span>
-                            <div class="text">Minutes</div>
-                        </div>
-                        <div>
-                            <span class="seconds"></span>
-                            <div class="text">Seconds</div>
+                <header class="header-box">
+                    <div class="page-title-box">
+                        <p class="page-title">SpaceX Launch Tracker</p>
+                        <hr />
+                    </div>
+                    <div>
+                        <h2>COUNTDOWN TO UPCOMING LAUNCH</h2>
+                        <div id="clockdiv">
+                            <div>
+                                <span class="days"></span>
+                                <div class="text">Days</div>
+                            </div>
+                            <div>
+                                <span class="hours"></span>
+                                <div class="text">Hours</div>
+                            </div>
+                            <div>
+                                <span class="minutes"></span>
+                                <div class="text">Minutes</div>
+                            </div>
+                            <div>
+                                <span class="seconds"></span>
+                                <div class="text">Seconds</div>
+                            </div>
                         </div>
                     </div>
-                </header>
 
-
-            </div>
+            </header>
+        </div>
 
             <!-- Nav -->
             <nav class="nav">
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="#">Explore</a>
-                        <ul>
-                            <li><a href="#">About Space X</a></li>
-                            <li><a href="#">Become a fan</a></li>
-
-                            <li>
-                                <a href="#"> Experience a launch &hellip;</a>
-                                <ul>
-                                    <li><a href="https://www.travala.com/">Book your trip</a></li>
-                                    <li><a href="https://floridahealthcovid19.gov/travelers/">Florida COVID-19
-                                            guidelines</a></li>
-
-                                </ul>
-                            </li>
-
-                        </ul>
-                    </li>
-
-                    <li><a href="right-sidebar.html">Launch Schedule</a></li>
                     <li><a href="http://127.0.0.1:5500/about_us.html#">About Us</a></li>
                     <li><a href="https://iss-sim.spacex.com/" l>Dragon Docking Simulator</a></li>
 
@@ -97,12 +80,12 @@
                             </label>
                         </fieldset>
                         <fieldset>
-                            <h5>Launch Result</h5>
-                            <label> Launch Successful
-                                <input type="radio" id="search-mission-success" name="mission-result-radio" value="success">
-                            </label>
-                            <label> Launch Failure
-                                <input type="radio" id="search-mission-failure" name="mission-result-radio" value="failure">
+                            <label for="launch-result"> Launch Result: 
+                                <select name="launch-result" id="launch-result-dropdown">
+                                    <option value="both">Both</option>
+                                    <option value="success">Successful</option>
+                                    <option value="failure">Failed</option>
+                                </select>
                             </label>
                         </fieldset>
                         <button type="button" id="search-mission-button">Search</button>
@@ -112,12 +95,6 @@
             </div>
 
         </section>
-
-
-        <div id=mission-info>
-
-            <p id="Search-results" align="center"> Search Result </p>
-        </div>
 
         <!-- Cards -->
         <div id="card-container" class="container-fluid">

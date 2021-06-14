@@ -2,27 +2,19 @@
 const searchMissonDateStartInput = document.querySelector("#search-mission-date-start-input");
 const searchMissonDateEndInput = document.querySelector("#search-mission-date-end-input");
 const searchMissonNameInput = document.querySelector("#search-mission-name-input");
-const searchMissionLaunchSuccessRadio = document.getElementsByName("mission-result-radio");
+//const searchMissionLaunchSuccessRadio = document.getElementsByName("mission-result-radio");
+const searchMissionLaunchResultDropdown = document.querySelector("#launch-result-dropdown");
 const searchMissionButton = document.querySelector("#search-mission-button");
+
 
 searchMissionButton.addEventListener("click", function() {
     //capture input
-    let searchMissionLaunchResult = "";
-    for(var i = 0; i < searchMissionLaunchSuccessRadio.length; i++)
-    {
-        if(searchMissionLaunchSuccessRadio[i].checked)
-        {
-            searchMissionLaunchResult = searchMissionLaunchSuccessRadio[i].value;
-        }
-
-    }
-
 
     //clear div
     ClearCardDiv();
 
     //fetch
-    FetchLaunchesSearch(searchMissonNameInput.value, searchMissonDateStartInput.value, searchMissonDateEndInput.value, searchMissionLaunchResult);
+    FetchLaunchesSearch(searchMissonNameInput.value, searchMissonDateStartInput.value, searchMissonDateEndInput.value, searchMissionLaunchResultDropdown.value);
     
 })
 
@@ -31,7 +23,6 @@ resetSearchButton.addEventListener("click", function(){
     ClearInput(searchMissonDateStartInput);
     ClearInput(searchMissonDateEndInput);
     ClearInput(searchMissonNameInput);
-    ClearRadioInput(searchMissionLaunchSuccessRadio);
 })
 
 document.addEventListener("DOMContentLoaded", function (){
@@ -164,7 +155,7 @@ function FetchLaunchesSearchCallback(data, searchNameInput, startDateInput, endD
         }
 
         //if the launchResult field is not empty
-        if(launchResult != "")
+        if(launchResult != "both")
         {
             //console.log("Launch Result Radio Input:" + launchResult);
             //console.log("Launch Result Data:" + data[i].success);
@@ -256,6 +247,7 @@ function BuildLaunchElement(launchInfo) {
     cardBackBody.append(missionDetailsHeader);
 
     const cardBackList = document.createElement("ul");
+    cardBackList.className = "card-back-list";
 
     //create children elements
     const missionNameElement = document.createElement("h5");
@@ -268,18 +260,35 @@ function BuildLaunchElement(launchInfo) {
     launchSuccessElement.className = "list-group-item";
     const launchDateUTCElement = document.createElement("li");
     launchDateUTCElement.className = "list-group-item";
+    
     const launchDetailsElement = document.createElement("p");
     launchDetailsElement.className = "card-text";
+    
+    
+    const articleLinkListItem = document.createElement("li");
     const articleLinkElement = document.createElement("a");
     articleLinkElement.setAttribute("href", articleLink);
+    articleLinkListItem.append(articleLinkElement)
+    
+    const redditLinkListItem = document.createElement("li");
     const redditLinksElement = document.createElement("a");
     redditLinksElement.setAttribute("href", redditCampaignLink);
+    redditLinkListItem.append(redditLinksElement)
+
+    const pressKitListItem = document.createElement("li");
     const pressKitElement = document.createElement("a");
     pressKitElement.setAttribute("href", pressKit);
+    pressKitListItem.append(pressKitElement)
+
+    const webCastLinkListItem = document.createElement("li");
     const webCastLinkElement = document.createElement("a");
     webCastLinkElement.setAttribute("href", webCastLink);
+    webCastLinkListItem.append(webCastLinkElement)
+
+    const wikipediaLinkListItem = document.createElement("li");
     const wikipediaLinkElement = document.createElement("a");
     wikipediaLinkElement.setAttribute("href", wikipediaLink);
+    wikipediaLinkListItem.append(wikipediaLinkElement)
 
     //Set the innertext of each element to display the data
     missionNameElement.innerText = missionName;
@@ -300,6 +309,7 @@ function BuildLaunchElement(launchInfo) {
         launchSuccessElement.innerText = "Launch Failure";
         newLaunchCard.className = "flip-card failure-card"
     }
+    
 
     moreInfoElement.innerText = "Click for more info";
     launchDetailsElement.innerText = launchDetails;
@@ -315,13 +325,14 @@ function BuildLaunchElement(launchInfo) {
     //card back
     cardBackBody.append(missionDetailsHeader);
     cardBackBody.append(launchDetailsElement);
-    cardBackList.append(articleLinkElement);
-    cardBackList.append(redditLinksElement);
-    cardBackList.append(webCastLinkElement);
-    cardBackList.append(wikipediaLinkElement);
-    cardBackList.append(pressKitElement);
-    cardBackBody.append(cardBackList);
+    cardBackList.append(articleLinkListItem);
+    cardBackList.append(redditLinkListItem);
+    cardBackList.append(webCastLinkListItem);
+    cardBackList.append(wikipediaLinkListItem);
+    cardBackList.append(pressKitListItem);
     newLaunchCardBack.append(cardBackBody);
+    newLaunchCardBack.append(cardBackList);
+ 
 
     //card front
     cardFrontBody.append(missionNameElement);
@@ -408,11 +419,4 @@ function ClearInput(input)
 
 }
 
-function ClearRadioInput(radioArray)
-{
-    for(var i = 0; i<radioArray.length;i++)
-    {
-        radioArray[i].checked = false;
-    }
-}
 
