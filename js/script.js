@@ -34,7 +34,6 @@ document.addEventListener("DOMContentLoaded", function() {
     //Fetch the past launches
     ClearCardDiv();
     FetchLaunches();
-    FetchNextLaunch();
 })
 
 //template for fetch command
@@ -431,3 +430,69 @@ function initializeClock(id, endtime) {
     const timeinterval = setInterval(updateClock, 1000);
 }
 
+<<<<<<< HEAD
+const deadline = new Date(Date.parse(new Date()) + 3 * 24 * 60 * 60 * 1000);
+initializeClock('clockdiv', deadline);
+
+function ClearInput(input) {
+
+    if (input.type === "radio") {
+        input.checked = false;
+    }
+
+    input.value = "";
+
+}
+
+
+
+// updateLaunchCountdown(date_precision, endDate) {
+
+
+//     function getTimeRemaining(launch) {
+//         let t = Date.parse(launch) - Date.parse(new Date());
+//         let seconds = Math.floor((t / 1000) % 60);
+//         let minutes = Math.floor((t / 1000 / 60) % 60);
+//         let hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+//         let days = Math.floor(t / (1000 * 60 * 60 * 24));
+//         return {
+//             total: t,
+//             days: days,
+//             hours: hours,
+//             minutes: minutes,
+//             seconds: seconds,
+//         };
+//     }
+
+//     function updateClock() {
+//         let t = getTimeRemaining(launch);
+//         tminusSpan.innerHTML = `T-`;
+//         daysSpan.innerHTML = `${t.days !== -1 ? t.days : 0}`;
+//         hoursSpan.innerHTML = `${t.hours !== -1 ? t.hours : 0}`;
+//         minsSpan.innerHTML = `${t.minutes !== -1 ? t.minutes : 0}`;
+//         secsSpan.innerHTML = `${t.seconds}`;
+//         if (t.total <= 0) {
+//             clearInterval(timeinterval);
+//         }
+//     }
+
+//     if (date_precision !== 'hour') {
+
+//         countdownDiv.innerHTML = 'Launch Time TBD';
+//     } else {
+//         updateClock();
+//         var timeinterval = setInterval(updateClock, 1000);
+//     }
+// }
+
+
+// const lastAPIGet = new Date(localStorage.getItem('https://api.spacexdata.com/v4/launches/next'));
+// const dateComp = new Date(new Date().getTime() - 30 * 60000);
+
+// if (lastAPIGet < dateComp) {
+//     getFreshData();
+// } else {
+//     getUpcomingLaunches();
+// }
+=======
+>>>>>>> main
