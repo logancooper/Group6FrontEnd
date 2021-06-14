@@ -23,6 +23,7 @@ resetSearchButton.addEventListener("click", function(){
     ClearInput(searchMissonDateStartInput);
     ClearInput(searchMissonDateEndInput);
     ClearInput(searchMissonNameInput);
+    searchMissionLaunchResultDropdown.selectedIndex = 0;
 })
 
 document.addEventListener("DOMContentLoaded", function (){
@@ -155,7 +156,7 @@ function FetchLaunchesSearchCallback(data, searchNameInput, startDateInput, endD
         }
 
         //if the launchResult field is not empty
-        if(launchResult != "both")
+        if(launchResult != "any")
         {
             //console.log("Launch Result Radio Input:" + launchResult);
             //console.log("Launch Result Data:" + data[i].success);
@@ -175,10 +176,10 @@ function FetchLaunchesSearchCallback(data, searchNameInput, startDateInput, endD
             //if the field is empty, set the match variable to true to ignore this field
             resultMatch = true;
         }
-        console.log("Card Result Match:" + resultMatch);
+        //console.log("Card Result Match:" + resultMatch);
         if(nameMatch && startDateMatch && endDateMatch && resultMatch === true)
         {
-            console.log("adding card");
+            //console.log("adding card");
             BuildLaunchElement(data[i]);
         }
 
