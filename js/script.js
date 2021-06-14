@@ -1,15 +1,15 @@
 "use strict";
-const searchMissonDateStartInput = document.querySelector("#search-mission-date-start-input");
-const searchMissonDateEndInput = document.querySelector("#search-mission-date-end-input");
-const searchMissonNameInput = document.querySelector("#search-mission-name-input");
-//const searchMissionLaunchSuccessRadio = document.getElementsByName("mission-result-radio");
-const searchMissionLaunchResultDropdown = document.querySelector("#launch-result-dropdown");
+
 const searchMissionButton = document.querySelector("#search-mission-button");
+const resetSearchButton = document.querySelector("#reset-button");
 
 
 searchMissionButton.addEventListener("click", function() {
     //capture input
-
+    const searchMissonDateStartInput = document.querySelector("#search-mission-date-start-input");
+    const searchMissonDateEndInput = document.querySelector("#search-mission-date-end-input");
+    const searchMissonNameInput = document.querySelector("#search-mission-name-input");
+    const searchMissionLaunchResultDropdown = document.querySelector("#launch-result-dropdown");
     //clear div
     ClearCardDiv();
 
@@ -18,11 +18,16 @@ searchMissionButton.addEventListener("click", function() {
 
 })
 
-const resetSearchButton = document.querySelector("#reset-button");
-resetSearchButton.addEventListener("click", function() {
+
+resetSearchButton.addEventListener("click", function(){
+    const searchMissonDateStartInput = document.querySelector("#search-mission-date-start-input");
+    const searchMissonDateEndInput = document.querySelector("#search-mission-date-end-input");
+    const searchMissonNameInput = document.querySelector("#search-mission-name-input");
+    const searchMissionLaunchResultDropdown = document.querySelector("#launch-result-dropdown");
     ClearInput(searchMissonDateStartInput);
     ClearInput(searchMissonDateEndInput);
     ClearInput(searchMissonNameInput);
+    searchMissionLaunchResultDropdown.selectedIndex = 0;
 })
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -151,7 +156,9 @@ function FetchLaunchesSearchCallback(data, searchNameInput, startDateInput, endD
         }
 
         //if the launchResult field is not empty
-        if (launchResult != "both") {
+
+        if(launchResult != "any")
+        {
             //console.log("Launch Result Radio Input:" + launchResult);
             //console.log("Launch Result Data:" + data[i].success);
             if (launchResult === "success" && data[i].success === true) {
@@ -165,9 +172,11 @@ function FetchLaunchesSearchCallback(data, searchNameInput, startDateInput, endD
             //if the field is empty, set the match variable to true to ignore this field
             resultMatch = true;
         }
-        console.log("Card Result Match:" + resultMatch);
-        if (nameMatch && startDateMatch && endDateMatch && resultMatch === true) {
-            console.log("adding card");
+
+        //console.log("Card Result Match:" + resultMatch);
+        if(nameMatch && startDateMatch && endDateMatch && resultMatch === true)
+        {
+            //console.log("adding card");
             BuildLaunchElement(data[i]);
         }
 
