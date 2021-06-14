@@ -327,6 +327,7 @@ body {
     /* background-image: url(https://alleslaw.com/wp-content/uploads/2018/01/background_white_hexagon.jpg); */
     background-position: center;
     overflow: hidden;
+    border-color: black;
 }
 
 .flip-card-back {
@@ -335,15 +336,37 @@ body {
     /* background-image: url(https://alleslaw.com/wp-content/uploads/2018/01/background_white_hexagon.jpg); */
     background-position: center;
     transform: rotateY(180deg);
-  } 
+}
 
-  .card-img-top
-  {
-	  width: 50%;
-	  height: 50%;
-	  object-fit: contain;
-  }
+.card-img-top {
+    width: 50%;
+    height: 50%;
+    object-fit: contain;
+}
 
+.about-container-fluid {
+    padding: 20px 20px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.about-card {
+    width: 500px;
+    height: 550px;
+    margin: 3rem;
+    display: inline-block;
+    border-color: black;
+    font-weight: bold;
+    border-radius: 25px;
+<<<<<<< HEAD
+}
+=======
+}
 .details
 {
     display: flex;
@@ -384,3 +407,4 @@ body {
 
     }
   }
+>>>>>>> 5e0592cef32ef73eef003cc2ced3b7f3e25783ae
