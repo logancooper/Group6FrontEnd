@@ -183,6 +183,30 @@ function FetchLaunchesSearchCallback(data, searchNameInput, startDateInput, endD
     }
 }
 
+function FetchNextLaunch()
+{
+    fetch('https://api.spacexdata.com/v4/launches/next')
+    .then(function(response) {
+        return response.json();
+    })
+    .then(function(data) {
+        FetchNextLaunchCallback(data);
+        return data;
+    })
+    .catch(function(error) {
+        console.error("ERROR: ", error);
+        return error;
+    })
+}
+
+function FetchNextLaunchCallback(data)
+{
+    if(data != null)
+    {
+        initializeClock("clockdiv", data.date_utc);
+    }
+}
+
 function BuildLaunchElement(launchInfo) {
     //process the info from launchInfo provided
     const missionName = launchInfo.name;
@@ -355,12 +379,15 @@ function ClearCardDiv() {
         div.removeChild(div.firstChild);
     }
 }
+function ClearInput(input) {
 
+    if (input.type === "radio") {
+        input.checked = false;
+    }
 
+    input.value = "";
 
-
-
-
+}
 
 
 function getTimeRemaining(endtime) {
@@ -403,6 +430,7 @@ function initializeClock(id, endtime) {
     const timeinterval = setInterval(updateClock, 1000);
 }
 
+<<<<<<< HEAD
 const deadline = new Date(Date.parse(new Date()) + 3 * 24 * 60 * 60 * 1000);
 initializeClock('clockdiv', deadline);
 
@@ -466,3 +494,5 @@ function ClearInput(input) {
 // } else {
 //     getUpcomingLaunches();
 // }
+=======
+>>>>>>> main
