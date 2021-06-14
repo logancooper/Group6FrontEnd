@@ -147,6 +147,10 @@ body.home .header {
     font-size: 1.25em;
     padding: 0;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5e0592cef32ef73eef003cc2ced3b7f3e25783ae
 
 .header hr {
     top: 1.5em;
@@ -435,4 +439,10 @@ h1 {
 .text {
     padding-top: 5px;
     font-size: 16px;
+<<<<<<< HEAD
 }
+=======
+
+}
+
+>>>>>>> 5e0592cef32ef73eef003cc2ced3b7f3e25783ae
