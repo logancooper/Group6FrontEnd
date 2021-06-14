@@ -363,48 +363,4 @@ body {
     border-color: black;
     font-weight: bold;
     border-radius: 25px;
-<<<<<<< HEAD
 }
-=======
-}
-.details
-{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /*width:100%;*/
-    height: 50%;
-    
-}
-
-.card-text
-{
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.card-back-list
-{
-    padding-inline-start: 0;
-    padding-top: 10px;
-}
-
-.inner
-{
-    display: flex;
-}
-
-@media only screen and (max-width: 600px) {
-    .page-title {
-      font-size: 2em;
-
-    }
-  }
-
-  @media only screen and (min-width: 600px) {
-    .page-title {
-      font-size: 3em;
-
-    }
-  }
->>>>>>> 5e0592cef32ef73eef003cc2ced3b7f3e25783ae
