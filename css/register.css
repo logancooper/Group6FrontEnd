@@ -1,0 +1,266 @@
+*{
+	margin:0;
+	padding:0;
+	font-family:sans-serif;
+}
+
+.banner {
+	padding: 60px;
+	margin-bottom: 20px;
+	text-align: center;
+	
+	color: white;
+	font-size: 30px;
+	
+	justify-content: center;
+	padding-top: 10px;
+
+}
+
+.banner {
+	padding-top: 10px;
+	z-index: 5;
+
+}
+
+/* navbar */
+.site-nav-wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 70px;
+
+}
+
+
+.navbar {
+	overflow: hidden;
+	background-color: transparent;
+
+	justify-content: center;
+
+
+}
+
+.navbar a {
+	float: left;
+	font-size: 16px;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+.dropdown {
+	float: left;
+	overflow: hidden;
+}
+
+.dropdown .dropbtn {
+	font-size: 16px;
+	border: none;
+	outline: none;
+	color: white;
+	padding: 14px 16px;
+	background-color: inherit;
+	font-family: inherit;
+	margin: 0;
+}
+
+.navbar a:hover,
+.dropdown:hover .dropbtn {
+	background-color: #df7366;
+}
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #f9f9f9;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	z-index: 1;
+
+}
+
+.dropdown-content a {
+	float: none;
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+	text-align: left;
+}
+
+.dropdown-content a:hover {
+	background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+	display: block;
+}
+
+.dropdown-content #live {
+	float: none;
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+	text-align: left;
+
+}
+
+.site-title h1 {
+	font-size: larger;
+	color: white;
+	text-align: center;
+	padding: 30px;
+	
+
+}
+
+
+.login-sign-up{
+	height:100%;
+	width:100%;
+	background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0.4)), url(..//images/SXlaunch.jpg);
+	background-position: center;
+	background-size: cover;
+	position: absolute;
+}
+
+.form-container{
+	width: 380px;
+	height: 480px;
+	position: relative;
+	margin: 6% auto;
+	background-color: #fff;
+	padding: 5px;
+	box-shadow: 0 4px 8px 0 rgba(168, 123, 123, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	overflow: hidden;
+}
+
+.button-container {
+width: 220px; 
+margin: 35px auto;
+position: relative;
+box-shadow: 0 0 20px 9px #df7366;
+border-radius: 30px;
+}
+
+.toggle-btn {
+padding: 10px 30px;
+cursor: pointer;
+background:transparent;
+border:0;
+outline:none;
+position: relative;
+
+}
+
+#btn {
+top: 0;
+left: 0;
+position:absolute;
+height: 100%;
+width:110px;
+border-radius:30px;
+transition: .5s;
+background: #df7366;
+}
+
+
+
+.fa {
+	padding: 10px 10px;
+	font-size: 30px;
+	width: 10px;
+	text-align: center;
+	text-decoration: none;
+	margin: 30px auto;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+	0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.smedia-links {
+	margin: 30px auto;
+	text-align: center;
+	
+}
+
+.smedia-links>a {
+	margin: 10px;
+	cursor: pointer;
+	border-radius: 10%;
+}
+
+
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+
+.fa-linkedin {
+    background: #007bb5;
+    color: white;
+}
+
+.fa-twitter {
+    background: #55ACEE;
+    color: white;
+}
+
+
+.input-login {
+	top: 180px;
+	position: absolute;
+	width: 280px;
+	transition: .5s;
+}
+
+.user-input {
+	width: 100%;
+	padding: 10px 0;
+	margin: 5px 0;
+	border-top: 0;
+	border-left: 0;
+	border-right: 0;
+	border-bottom: 1px solid #999;
+	outline: none;
+	background: transparent;
+}
+
+.submit-btn{
+	width: 85%;
+	padding: 10px 30px;
+	cursor: pointer;
+	display: block;
+	margin: 0 auto;
+	border:none;
+	outline: none;
+	background: #df7366;
+	border-radius: 30px;
+}
+
+.checkbox {
+	margin: 30px 10px 30px 0;
+
+}
+span {
+	color: #777;
+	font-size:12px;
+	bottom: 68px;
+	position: absolute;
+}
+
+#login{
+	left: 50px;
+}
+
+#register{
+	left: 450px;
+}
