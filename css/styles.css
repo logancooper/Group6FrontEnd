@@ -23,7 +23,6 @@ body.home.header:after {
 
 .nav {
     justify-content: center;
-    
     top: 0;
     left: 0;
     width: 100%;
@@ -31,8 +30,7 @@ body.home.header:after {
     padding: 1.5em 0 1.5em 0;
     z-index: 1;
     overflow: hidden;
-    display:flex;
-    
+    display: flex;
 }
 
 .nav>ul {
@@ -93,13 +91,12 @@ ul {
     padding: 7.5em 0 2em 0;
     cursor: default;
     background-attachment: unset;
-    
 }
 
 .header {
     background-position: bottom;
-	background-repeat: no-repeat;
-	background-size: cover;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 body.home .header {
@@ -114,7 +111,7 @@ body.home .header {
 }
 
 .header .inner {
-    position:absolute;
+    position: absolute;
     z-index: 1;
     margin: 0;
     display: inline-block;
@@ -140,7 +137,6 @@ body.home .header {
     color: inherit;
 }
 
-<<<<<<< HEAD
 .header .button {
     display: inline-block;
     border-radius: 100%;
@@ -151,9 +147,6 @@ body.home .header {
     font-size: 1.25em;
     padding: 0;
 }
-=======
-
->>>>>>> main
 
 .header hr {
     top: 1.5em;
@@ -352,7 +345,6 @@ fieldset {
 }
 
 .social-links article {
-<<<<<<< HEAD
     padding: 1rem;
     align-items: center;
     margin: auto;
@@ -360,16 +352,6 @@ fieldset {
 
 .social-links>article>a {
     margin: 1rem;
-=======
-	padding: 1rem;
-	align-items: center;
-	margin: auto;
-
-}
-
-.social-links>article>a {
-	margin: 1rem;
->>>>>>> main
 }
 
 .fa {
@@ -410,7 +392,6 @@ fieldset {
 .fa-instagram {
     background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
     color: white;
-
 }
 
 .copyright-container ul>li {
@@ -454,18 +435,4 @@ h1 {
 .text {
     padding-top: 5px;
     font-size: 16px;
-<<<<<<< HEAD
 }
-=======
-}
-
-
-
-
-
-
-
-
-
-
->>>>>>> main
