@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/register.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Become a fan</title>
+</head>
+
+<body>
+
+
+    <div class="login-sign-up">
+
+        <div class="banner">
+            <div class="site-nav-wrapper">
+
+                <div class="navbar">
+                    <a href="index.html">Home</a>
+
+                    <div class="dropdown">
+                        <button class="dropbtn">Explore
+
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="register.html"> Become a fan</a>
+                            <hr />
+                            <a id="live">Experience a live spaceX launch </a>
+
+                            <hr />
+                            <div class="trip">
+                                <a href="https://www.travala.com/">Book your trip</a>
+                                <a href="https://floridahealthcovid19.gov/travelers/">Florida COVID-19 guidelines</a>
+                                </li>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#">Launch Schedule</a>
+                    <a href="https://iss-sim.spacex.com/">Dragon Space Simulator</a>
+                    <a href="about_us.html">About Us</a>
+                </div>
+            </div>
+
+        </div>
+
+
+
+        <div class=" title-Wrapper ">
+            <div class="site-title">
+
+                <h1>Login or Register </h1>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="form-container">
+            <div class="button-container">
+
+                <div id="btn"></div>
+                <button type="button" class="toggle-btn" onclick="login()"> Log In</button>
+                <button type="button" class="toggle-btn" onclick="register()"> Register</button>
+
+            </div>
+
+            <div class="smedia-links">
+                <a href="https://www.facebook.com/groups/spacexgroup/" class="fa fa-facebook"></a>
+                <a href="https://twitter.com/SpaceX?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"
+                    class="fa fa-twitter"></a>
+                <a href="https://www.linkedin.com/company/spacex/" class="fa fa-linkedin"></a>
+            </div>
+            <div>
+                <form id="login" class="input-login">
+                    <input type="text" class="user-input" placeholder="User-id" required>
+                    <input type="text" class="user-input" placeholder="Enter Password" required>
+                    <input type="checkbox" class="checkbox"> <span> Remember Password</span>
+                    <button type="Submit" class="submit-btn"> Log In</button>
+
+                </form>
+
+
+                <form id="register" class="input-login">
+                    <input type="text" class="user-input" placeholder=" Create User-id" required>
+                    <input type="email" class="user-input" placeholder="Email" required>
+                    <input type="text" class="user-input" placeholder="Create Password" required>
+                    <input type="text" class="user-input" placeholder="Verify Password" required>
+                    <input type="checkbox" class="checkbox"> <span> I agree to the terms and conditions </span>
+                    <button type="Submit" class="submit-btn"> Register </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+        const loginForm = document.getElementById("login");
+        const registerForm = document.getElementById("register");
+        const regLoginButton = document.getElementById("btn");
+
+        function register() {
+            loginForm.style.left = "-400px";
+            registerForm.style.left = "50px";
+            regLoginButton.style.left = "110px";
+        }
+
+        function login() {
+            loginForm.style.left = "50px";
+            registerForm.style.left = "450px";
+            regLoginButton.style.left = "0px";
+        }
+    </script>
+
+
+</body>
+
+</html>

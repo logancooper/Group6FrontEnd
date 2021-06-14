@@ -23,7 +23,7 @@ body.home.header:after {
 
 .nav {
     justify-content: center;
-    position: absolute;
+    
     top: 0;
     left: 0;
     width: 100%;
@@ -31,6 +31,8 @@ body.home.header:after {
     padding: 1.5em 0 1.5em 0;
     z-index: 1;
     overflow: hidden;
+    display:flex;
+    
 }
 
 .nav>ul {
@@ -83,7 +85,6 @@ ul {
 }
 
 .header {
-
     position: relative;
     background-image: url('../images/header.jpg');
     background-size: cover;
@@ -92,6 +93,13 @@ ul {
     padding: 7.5em 0 2em 0;
     cursor: default;
     background-attachment: unset;
+    
+}
+
+.header {
+    background-position: bottom;
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 
@@ -107,7 +115,7 @@ body.home .header {
 }
 
 .header .inner {
-    position: relative;
+    position:absolute;
     z-index: 1;
     margin: 0;
     display: inline-block;
@@ -134,16 +142,6 @@ body.home .header {
 }
 
 
-.header .button {
-    display: inline-block;
-    border-radius: 100%;
-    width: 4.5em;
-    height: 4.5em;
-    line-height: 4.5em;
-    text-align: center;
-    font-size: 1.25em;
-    padding: 0;
-}
 
 .header hr {
     top: 1.5em;
@@ -352,7 +350,6 @@ fieldset {
 }
 
 .social-links article {
-	
 	padding: 1rem;
 	align-items: center;
 	margin: auto;
@@ -360,7 +357,6 @@ fieldset {
 }
 
 .social-links>article>a {
-	
 	margin: 1rem;
 }
 
@@ -401,8 +397,9 @@ fieldset {
 }
 
 .fa-instagram {
-    background: #125688;
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
     color: white;
+
 }
 
 .copyright-container ul>li {
@@ -447,4 +444,13 @@ h1 {
     padding-top: 5px;
     font-size: 16px;
 }
+
+
+
+
+
+
+
+
+
 
